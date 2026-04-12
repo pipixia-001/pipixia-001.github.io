@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Linux学习笔记（1） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算机主要由硬件和软件组成 虚拟机就是一个虚拟的电脑；模拟出了一个虚拟的硬件  安装Centos:遇到的困难：阿里云的链接无法使用  解决方法：通过清华大学镜像网站下载完成   远程连接Linux:  一、掌握图形化与命令行  图形化：通过资源管理器  通过cmd命令行  使用Linux 基本使用命令行，效率高并且稳定   工具的使用  window实现交互不方便，因此借助第三方平台进行操作  第">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习笔记（1）">
+<meta property="og:url" content="http://example.com/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="计算机主要由硬件和软件组成 虚拟机就是一个虚拟的电脑；模拟出了一个虚拟的硬件  安装Centos:遇到的困难：阿里云的链接无法使用  解决方法：通过清华大学镜像网站下载完成   远程连接Linux:  一、掌握图形化与命令行  图形化：通过资源管理器  通过cmd命令行  使用Linux 基本使用命令行，效率高并且稳定   工具的使用  window实现交互不方便，因此借助第三方平台进行操作  第">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:\Users\18376\AppData\Roaming\Typora\typora-user-images\image-20260407213043730.png">
+<meta property="article:published_time" content="2026-04-08T12:43:04.000Z">
+<meta property="article:modified_time" content="2026-04-11T08:02:12.754Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\18376\AppData\Roaming\Typora\typora-user-images\image-20260407213043730.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Linux学习笔记（1）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2026-04-08T12:43:04.000Z" itemprop="datePublished">2026-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Linux学习笔记（1）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="计算机主要由硬件和软件组成"><a href="#计算机主要由硬件和软件组成" class="headerlink" title="计算机主要由硬件和软件组成"></a>计算机主要由硬件和软件组成</h3><ul>
+<li><p>虚拟机就是一个虚拟的电脑；模拟出了一个虚拟的硬件</p>
+</li>
+<li><p>安装Centos:遇到的困难：阿里云的链接无法使用</p>
+</li>
+<li><p>解决方法：通过清华大学镜像网站下载完成</p>
+</li>
+</ul>
+<p><strong>远程连接Linux:</strong></p>
+<ul>
+<li><p>一、掌握图形化与命令行</p>
+</li>
+<li><p>图形化：通过资源管理器</p>
+</li>
+<li><p>通过cmd命令行</p>
+</li>
+<li><p>使用Linux 基本使用命令行，效率高并且稳定</p>
+</li>
+</ul>
+<p><strong>工具的使用</strong></p>
+<ul>
+<li><p>window实现交互不方便，因此借助第三方平台进行操作</p>
+</li>
+<li><p>第三方软件：FinallShell</p>
+</li>
+<li><p>学习如何通过Finalshell远程连接Linux</p>
+</li>
+<li><p>遇到问题：输入获取物理主机IP地址时，在终端输入ifconfig时ens33后并没有IP地址</p>
+</li>
+<li><p>解决方案：询问豆包</p>
+</li>
+<li><p>问题根源：没有启动VMware NAT Service 以及VMware DHCP Service ，导致虚拟机没有被分配IP</p>
+</li>
+</ul>
+<p><em><strong>注意：Linux系统重启之后IP地址可能会变化，如果变化，就重新手动匹配IP</strong></em></p>
+<ul>
+<li>配置好之后就可以通过FinalShell远程连接linux</li>
+</ul>
+<h3 id="虚拟机快照：（在损坏操作系统的情况）"><a href="#虚拟机快照：（在损坏操作系统的情况）" class="headerlink" title="虚拟机快照：（在损坏操作系统的情况）"></a>虚拟机快照：（在损坏操作系统的情况）</h3><ul>
+<li><p>作用：通过快照将当前虚拟机的状态保存下来，吗，，，，，，以后可以通过快照恢复虚拟机到保存的状态</p>
+</li>
+<li><p>步骤:</p>
+</li>
+<li><p>首先，需要关机虚拟机，右键点击选择快照</p>
+</li>
+<li><p>然后，点击拍摄快照</p>
+</li>
+<li><p>当虚拟机出现问题之后，点击快照，点击“转到”按钮，</p>
+</li>
+</ul>
+<h3 id="Linux基础命令结构"><a href="#Linux基础命令结构" class="headerlink" title="Linux基础命令结构"></a>Linux基础命令结构</h3><p>Linux中的目录结构：</p>
+<p>路径描述：在Linux系统中“ &#x2F; ”,且只有一个顶级目录，即为根目录。</p>
+<p>但是在windows系统中“ \ “,有多个顶级目录，即为各个盘符</p>
+<h3 id="Linux操作系统"><a href="#Linux操作系统" class="headerlink" title="Linux操作系统"></a>Linux操作系统</h3><p>Linux命令行：<code>command [-option(可选，非必填)] [parameter（可选，非必填]</code></p>
+<p><code>eg</code>.   <code>ls -l /home/pipixia </code>  ls是命令本身，-l是选项，<code>/home/pipixia</code>是参数：以列表的形式显示&#x2F;home&#x2F;<code>pipixia</code>的内容</p>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>作用：展示当前的工作目录（以平铺的形式）（一般默认是Home）</p>
+<p>ls命令的参数（-a , -l ,-h)</p>
+<ul>
+<li><p>-a: 表示all的意思，即列出全部的文件，包含以’ . ‘开头的隐藏文件</p>
+</li>
+<li><p>-l: 表示以列表的形式展现内容</p>
+</li>
+<li><p>-h：表示以容易阅读的形式用单位展示（K,B.L)</p>
+</li>
+</ul>
+<p>命令参数的组合使用：同时使用多个参数的效果<code>eg</code> . <code>ls -a -l</code>   <code>ls -al</code>   <code>ls -la</code>   <code>ls -lah</code></p>
+<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a><code>cd</code></h3><p>作用：更改当前所在的工作目录（默认home目录）</p>
+<ul>
+<li><code>cd ~</code>和<code>cd</code>默认都是回到 家目录下，但是管理员和普通用户的家目录不同</li>
+</ul>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>作用：通过pwd命令来查看当前所在的工作目录  无需参数</p>
+<h3 id="相对路径、绝对路径、特殊路径"><a href="#相对路径、绝对路径、特殊路径" class="headerlink" title="相对路径、绝对路径、特殊路径"></a>相对路径、绝对路径、特殊路径</h3><ul>
+<li><p>1.相对路径：以当前路径为起点，路径无需以&#x2F;开头</p>
+</li>
+<li><p>2.绝对路径：以根目录为起点，路径描述以&#x2F;开头（不方便）</p>
+</li>
+<li><p>3.特殊路径：（1） “<code>cd.</code>“ :表示当前目录</p>
+</li>
+</ul>
+<p>​                       （2） “<code>cd ..</code>“:表示切换到上一级目录（”<code>cd ../..</code>“表示切换到上二级目录）</p>
+<p>​                        （3） ”<code>cd~</code>“：表示切换到HOME目录</p>
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>作用：创建新的目录：参数必填，（-p参数可选  例：<code>mkdir -p itcast/good/666</code>,可以通过-p参数将一整条参数都创建完成）</p>
+<p>注意:因为创建文件的权限比较大，所以用<code>mkdir</code>创建目录时需要在HOME目录下</p>
+<h3 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h3><ul>
+<li><p>touch: 创建文件，touch 命令无选项，参数必填，表示要创建的文件路径，相对、绝对、特殊路径符均可使用</p>
+</li>
+<li><p>cat: 查看文件的内容（必填参数）</p>
+</li>
+<li><p>more: 查看文件内容，但与cat的区别在于more支持翻页，如果文件内容过多，可以一页页地展示(必填参数)</p>
+</li>
+<li><p>cp: 可以用于复制文件和文件夹   语法：<code> cp</code> [-r] 参数1  参数2（-r，可选，用于复制文件夹时使用，表示递归，参数1表示被复制的文件和文件夹，参数2，表示要被复制去的地方）</p>
+</li>
+<li><p>mv: 移动文件和文件夹，并拥有改名的效果   语法： mv  参数1  参数2 </p>
+</li>
+<li><p>rm: 用于文件和文件夹的删除    语法：  rm  [-r -f] 参数1  参数2  …….参数N(-r 用于删除文件夹，-f表示force,强制删除，一般用户用不到-f)可以一次性删除多个目标。</p>
+</li>
+</ul>
+<h3 id="rm的通配符"><a href="#rm的通配符" class="headerlink" title="rm的通配符"></a>rm的通配符</h3><ul>
+<li><p>符号“*”表示通配符，即匹配任意内容，可以用来做模糊匹配</p>
+</li>
+<li><p>test*表示匹配任意以test开头的内容</p>
+</li>
+<li><p>*test表示匹配任意以test结尾的内容</p>
+</li>
+<li><p>*test *表示匹配任意包含test的内容</p>
+</li>
+<li><p>提权：<code>sudo su </code>和<code>su -root-</code></p>
+</li>
+<li><p>输入exit返回普通用户</p>
+</li>
+</ul>
+<h3 id="which-and-find"><a href="#which-and-find" class="headerlink" title="which  and find"></a>which  and find</h3><ul>
+<li><p>which命令: 语法：<code>which  文件的路径</code></p>
+</li>
+<li><p>find命令：（1）按文件名查找   语法：find 起始路径  -name “被查找的文件名”</p>
+</li>
+</ul>
+<p>​                       查找文件的通配符“*”</p>
+<p>​                          （2）按文件大小查找文件  语法： find  起始路径  -size +|-n[<code>KMG</code>]       +、—分别表示大于和小于n表示大小数字  ，KMG表示大小单位</p>
+<p>​                        例：  找大于<code>1GB</code>的文件：find &#x2F; -size +1<code>G</code></p>
+<h3 id="grep命令和wc命令和管道符"><a href="#grep命令和wc命令和管道符" class="headerlink" title="grep命令和wc命令和管道符"></a>grep命令和wc命令和管道符</h3><p><strong>grep命令</strong></p>
+<p>作用：通过grep命令，从文件中通过关键字过滤文件行  语法：  <code>grep  [-n] 关键字 文件路径</code>{<strong>-n</strong>,可选，表示在结果中显示匹配的行的行号}(<strong>关键字</strong>，必填，表示过滤的关键字，带有空格和其他特殊符号，建议使用““将关键字包围起来)（<strong>文件路径</strong>，可作为内容输入端口）</p>
+<p><strong>wc命令</strong></p>
+<ul>
+<li>作用：做数量统计，统计文件的行数，单词数目等</li>
+<li>语法： <code>wc [-c -m -l -w]文件路径</code></li>
+<li>-c: 统计byte数量</li>
+<li>-m: 统计字符数量</li>
+<li>-l: 统计行数</li>
+<li>-w：统计单词数量</li>
+</ul>
+<p><strong>管道符“|”</strong></p>
+<ul>
+<li><p>含义：将管道符组左边命令的结果作为右边命令的输入</p>
+</li>
+<li><p>可以用于和其他的命令连用</p>
+</li>
+<li><p>管道符的基础应用</p>
+</li>
+</ul>
+<h3 id="echo、-反引号-、tail命令、重定向符的使用"><a href="#echo、-反引号-、tail命令、重定向符的使用" class="headerlink" title="echo、 反引号&#96;、tail命令、重定向符的使用"></a>echo、 反引号&#96;、tail命令、重定向符的使用</h3><p><strong>echo</strong></p>
+<ul>
+<li>在命令行中输出指定内容</li>
+</ul>
+<p><strong>反引号“&#96;”</strong></p>
+<ul>
+<li>··包围的内容将会被作为命令去执行，而不是作为字符被输出</li>
+<li>例： <strong>etho <code>pwd</code></strong></li>
+</ul>
+<p><strong>重定向符</strong></p>
+<ul>
+<li>**”&gt;”**将左侧命令的结果，<strong>覆盖</strong>写入到符号右边的指定的文件中</li>
+<li>**“&gt;&gt;”**将左侧命令的结果，<strong>追加</strong>写入到符号右侧指定文件中</li>
+</ul>
+<p><strong>tail命令</strong></p>
+<ul>
+<li><p>作用：可以查看文件尾部内容（默认查看10行）</p>
+</li>
+<li><p>语法：<code>tail [-f  - num] Linux路径</code></p>
+</li>
+</ul>
+<h3 id="vi编辑器"><a href="#vi编辑器" class="headerlink" title="vi编辑器"></a>vi编辑器</h3><p><strong>语法</strong></p>
+<ul>
+<li><p><code>vi  文件路径</code></p>
+</li>
+<li><p><code>vim  文件路径</code></p>
+</li>
+</ul>
+<p><strong>vi&#x2F;vim命令模式的快捷键</strong></p>
+<ul>
+<li><p><strong>i</strong>: 在当前光标位置进入输入模式</p>
+</li>
+<li><p><strong>a</strong>: 在当前光标位置之后进入输入模式</p>
+</li>
+<li><p>。。。。。。</p>
+</li>
+</ul>
+<h3 id="Linux用户和权限"><a href="#Linux用户和权限" class="headerlink" title="Linux用户和权限"></a>Linux用户和权限</h3><ul>
+<li><p><strong>su 和exit命令</strong></p>
+</li>
+<li><p><strong>su语法</strong>： <code>su [-] [用户名]</code></p>
+</li>
+<li><p><strong>exit</strong>： 退出超级管理员</p>
+</li>
+</ul>
+<p><strong>用户、用户组</strong></p>
+<ul>
+<li><p><strong>用户组管理</strong>（需要用root权限才能创建）</p>
+</li>
+<li><p>创建用户组：<code>groupadd 用户组名</code></p>
+<ul>
+<li>删除用户组：<code>groupdel 用户组名</code></li>
+</ul>
+</li>
+<li><p><strong>用户管理</strong>：1.创建用户：<code>useradd [-g  -d]用户名</code></p>
+<ul>
+<li><p>-g: 指定用户的组，不指定-g,会创建同名组并自动加入，指定-g需要组已经存在</p>
+</li>
+<li><p>-d: 指定用户HOME目录，不指定，HOME目录默认在：  <code>/home/用户名</code></p>
+</li>
+<li><p>退出当前用户：logout</p>
+<p>2.删除用户：<code>userdel [-r] 用户名</code></p>
+</li>
+</ul>
+<p>​     <strong>-r</strong>: 删除用户的home目录，若不使用-r时，删除用户时，HOME目录保存</p>
+<p>  3.<strong><code>id</code>命令</strong>：查看用户所属组</p>
+<ol start="4">
+<li><p><strong><code>usermod -aG 用户组，用户名</code></strong>:将指定的用户加入到指定的用户组</p>
+</li>
+<li><p><strong>getent命令</strong>：</p>
+</li>
+</ol>
+<p>​    语法:<code>getent passwd</code>可以查看当前系统有哪些用户</p>
+<p>​    语法：<code>getent group</code>可以查看当前系统内有哪些用户组</p>
+</li>
+</ul>
+<h3 id="查看Linux中的权限"><a href="#查看Linux中的权限" class="headerlink" title="查看Linux中的权限"></a>查看Linux中的权限</h3><ul>
+<li><table>
+<thead>
+<tr>
+<th>所属用户权限</th>
+<th>所属用户组权限</th>
+<th>其他用户权限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r w x -</td>
+<td>r w x  -</td>
+<td>r w x  -</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>rwx的含义</strong></p>
+<ul>
+<li>r: 表示读的权限（4）</li>
+<li>w: 表示写的权限（2）</li>
+<li>x：表示执行的权限（1）</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用chmod命令，修改文件，文件夹的权限信息"><a href="#使用chmod命令，修改文件，文件夹的权限信息" class="headerlink" title="使用chmod命令，修改文件，文件夹的权限信息"></a>使用<code>chmod</code>命令，修改文件，文件夹的权限信息</h3><ul>
+<li>语法：<code>chmod [-R] 权限 文件或文件夹</code>   <strong>-R</strong>: 对文件或文件夹内的全部内容做同样的操作</li>
+</ul>
+<h3 id="使用chown命令，修改文件，文件夹的所属用户和用户组-只能适用于root用户执行"><a href="#使用chown命令，修改文件，文件夹的所属用户和用户组-只能适用于root用户执行" class="headerlink" title="使用chown命令，修改文件，文件夹的所属用户和用户组  只能适用于root用户执行"></a>使用<code>chown</code>命令，修改文件，文件夹的所属用户和用户组  <em>只能适用于root用户执行</em></h3><ul>
+<li>语法： <code>chown [-R] [用户][:] [用户组] 文件或文件夹</code></li>
+</ul>
+<h3 id="Linux的实用操作"><a href="#Linux的实用操作" class="headerlink" title="Linux的实用操作"></a>Linux的实用操作</h3><p><strong>1. 强制停止的快捷键</strong></p>
+<ul>
+<li>语法：<code>ctrl+c</code>强制停止</li>
+</ul>
+<p><strong>2.强制退出登出的快捷键</strong></p>
+<ul>
+<li>语法：<code>ctrl+d</code>强制退出账户（与exit以及logout的作用相似）</li>
+</ul>
+<p><strong>3.历史搜索命令</strong></p>
+<ul>
+<li><p><code>history</code>    搜索过去的命令</p>
+</li>
+<li><p><code>!+[要搜的前缀开头]</code>   例：!p 就能搜到最近一次以p开头的命令</p>
+</li>
+<li><p><code>ctrl+r</code>    输入内容去匹配历史命令</p>
+</li>
+</ul>
+<p><strong>4.光标移动快捷键</strong></p>
+<ul>
+<li><code>ctrl+a</code>  ：跳到命令开头</li>
+<li><code>ctrl+e</code>  ：跳到命令结尾</li>
+<li><code>ctrl+键盘右键</code>   ：向右跳一个单词</li>
+<li><code>ctrl+键盘左键</code>   ： 向左跳一个单词</li>
+</ul>
+<p><strong>5.清屏快捷键</strong></p>
+<p><code>ctrl+l  或  clear</code></p>
+<h3 id="使用yum为CentOS安装软件"><a href="#使用yum为CentOS安装软件" class="headerlink" title="使用yum为CentOS安装软件"></a>使用yum为CentOS安装软件</h3><p><em><strong>使用命令行yum命令安装软件</strong></em></p>
+<ul>
+<li><p>语法：<code>yum [-y] [install] | [remove] | [search] 软件名</code></p>
+</li>
+<li><p>[-y],自动确认，无需手动确认安装或卸载</p>
+</li>
+<li><p>yum 命令需要root 权限，并且需要联网</p>
+</li>
+</ul>
+<h3 id="掌握使用systemctl命令控制软件的启动和关闭"><a href="#掌握使用systemctl命令控制软件的启动和关闭" class="headerlink" title="掌握使用systemctl命令控制软件的启动和关闭"></a>掌握使用systemctl命令控制软件的启动和关闭</h3><ul>
+<li>语法：  <code>systemctl start | stop | status | enable | disable 服务名</code></li>
+<li>systemctl 控制的软件，一般称为服务</li>
+<li>enable :开机自启动</li>
+<li>status:看状态</li>
+</ul>
+<h3 id="使用ln命令创建链接"><a href="#使用ln命令创建链接" class="headerlink" title="使用ln命令创建链接"></a>使用ln命令创建链接</h3><ul>
+<li>作用：  在系统中创建软链接，可以将文件，文件夹链接到其他位置（类似于快捷方式）</li>
+<li>语法：  <code>ln -s 参数1 参数2</code><ul>
+<li>-s:  创建如软链接</li>
+<li>参数1：被链接的文件和文件夹</li>
+<li>参数2：要链接去的目的地</li>
+</ul>
+</li>
+</ul>
+<h3 id="日期和时区"><a href="#日期和时区" class="headerlink" title="日期和时区"></a>日期和时区</h3><p><strong>1. date命令查看日期时间</strong></p>
+<ul>
+<li><p>语法：  <code>date</code>[-d] [+格式化字符串]</p>
+</li>
+<li><p>[-d]：按照给定的字符串显示日期，一般用于日期计算</p>
+</li>
+<li><p>格式字符串：</p>
+<ul>
+<li><p>[%Y]：年</p>
+</li>
+<li><p>[%y]：年份后两位数字（00..99）</p>
+</li>
+<li><p>[%m]：月份（01..12）</p>
+</li>
+<li><p>[%d]： 日期（01..30）</p>
+</li>
+<li><p>[%H]： 小时（00..23）</p>
+</li>
+<li><p>[%M]： 分钟（00..59）</p>
+</li>
+<li><p>[%S]： 秒（00.60）</p>
+</li>
+<li><p>[%s]： 自<code>1970-01-01 00:00:00 UTC</code> 到现在的秒数</p>
+<ul>
+<li>可以自定义时间展现的形式</li>
+<li>输入date本身，会出现当前时间</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>2.修改时区（需要使用root权限）</strong></p>
+<p><code>rm -f /etc/localtime</code></p>
+<p><code>ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></p>
+<p>将<code>ntpd</code>设为自启动模式，联网自动校准时间</p>
+<p>也可以<code>ntpdate -u ntp.aliyun.com</code>  阿里云校准时间</p>
+<h3 id="IP地址和主机名"><a href="#IP地址和主机名" class="headerlink" title="IP地址和主机名"></a><code>IP</code>地址和主机名</h3><ul>
+<li><p>查看IP：<code>ifconfig</code></p>
+</li>
+<li><p>查看主机名：<code>hostname</code></p>
+<ul>
+<li>修改主机名：（需要root权限）<code>hostnamectl set -hostname 主机名</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="虚拟机配置固定IP-已完成"><a href="#虚拟机配置固定IP-已完成" class="headerlink" title="虚拟机配置固定IP:已完成"></a>虚拟机配置固定<code>IP</code>:已完成</h3><h3 id="ping命令"><a href="#ping命令" class="headerlink" title="ping命令"></a>ping命令</h3><ul>
+<li>作用：通过ping命令，检查指定的网络服务器是否是可联通状态</li>
+<li>语法：<code>ping [-c num] ip 或主机名</code><ul>
+<li>[-c]：检查的次数，不使用-c选项，将无限次持续检查</li>
+</ul>
+</li>
+</ul>
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a><code>wget</code></h3><ul>
+<li><p>作用：<code>wget</code>是非交互式文件下载器，可以在命令行中下载网络文件</p>
+</li>
+<li><p>语法：<code>wget [-b] url</code></p>
+<ul>
+<li><p>-b: 可选，后台下载，会将日志写到当前工作目录的<code>wegt-log</code>文件中</p>
+</li>
+<li><p><code>url</code>:下载链接</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h3><ul>
+<li>作用：可以发送<code>http</code>网络请求，可用于：下载文件，获取信息</li>
+<li>语法：<code>curl [-0] url</code><ul>
+<li>-0,用于下载文件，当<code>url</code>是下载链接时，可以使用此选项保存文件</li>
+<li><code>url</code>:要发起请求的网络地址</li>
+</ul>
+</li>
+</ul>
+<p><strong>端口</strong></p>
+<h3 id="netstat命令"><a href="#netstat命令" class="headerlink" title="netstat命令"></a><code>netstat</code>命令</h3><ul>
+<li><p>查看指定端口的占用情况</p>
+</li>
+<li><p>语法：<code>netstat -anp|grep 端口号</code></p>
+</li>
+</ul>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><ul>
+<li><p>定义：每一个程序在运行时，被操作系统注册为系统中的一个进程，并会为每一个进程都分配一个独有的的：进程ID</p>
+</li>
+<li><p>查看进程的语法：<code>ps [-e -f]</code></p>
+<ul>
+<li><p>-e: 显示全部的进程</p>
+</li>
+<li><p>-f: 以完全格式化的形式展现全部的信息固定用法：<code>ps -ef</code></p>
+<ul>
+<li>与管道符公用，过滤信息，快速查找</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>关闭进程</p>
+<ul>
+<li>强制关闭进程：<code>kill [-9] 进程ID</code><ul>
+<li>-9:表示强制关闭进程</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h3><ul>
+<li><p>语法：<code>top</code>  查看CPU使用情况</p>
+<ul>
+<li><p><code>top -i</code>:  只要查看启用的</p>
+</li>
+<li><p>h键：可以用来查看快捷键</p>
+</li>
+</ul>
+</li>
+<li><p>磁盘的信息监控</p>
+<ul>
+<li>使用df命令</li>
+<li>语法:<code>df[-h]</code>： 查看磁盘使用率<ul>
+<li>-h:以更加人性化的单位显示</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>磁盘的信息监控还可以用</p>
+<ul>
+<li><p>语法： <code>iostat [x][num1][num2]</code>： 查看磁盘速率</p>
+<ul>
+<li><p>-x: 显示更多信息</p>
+</li>
+<li><p>num1：数字，刷新间隔</p>
+</li>
+<li><p>num2:   数字，刷新几次</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="网络的状态监控"><a href="#网络的状态监控" class="headerlink" title="网络的状态监控"></a>网络的状态监控</h3><ul>
+<li><p>语法： <code>sar -n DEV num1 num2</code></p>
+<ul>
+<li><p>-n : 查看网络，DEV表示查看网络接口</p>
+</li>
+<li><p>num1：刷新间隔</p>
+</li>
+<li><p>num2:  查看次数</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><ul>
+<li><p>定义:指的是操作系统在运行的时候，记录的一些关键性信息，用以辅助系统的运行</p>
+</li>
+<li><p>语法：<code>env</code>:查看当前系统中记录的环境变量(键值对的形式)</p>
+</li>
+<li><p><strong><code>&amp;</code></strong>:取到环境变量，例:<code>echo $PWD</code>（$引出键名，取出环境变量）</p>
+</li>
+<li><p><code>export</code>:自行设置临时变量</p>
+</li>
+<li><p>永久生效：</p>
+<ul>
+<li>针对当前用户生效,   配置在当前用户的<code>~/bashrc</code>文件中</li>
+<li>针对所有用户生效，  配置在系统的<code>/etc/profie</code>文件中</li>
+<li>并通过语法：<code>source 配置文件</code>，进行立刻生效，或重新登陆Finalshell生效</li>
+</ul>
+</li>
+</ul>
+<h3 id="上传和下载"><a href="#上传和下载" class="headerlink" title="上传和下载"></a>上传和下载</h3><ul>
+<li><p>通过Finalshell拖拽</p>
+</li>
+<li><p>通过rz命令上传</p>
+</li>
+<li><p>通过sz命令下载</p>
+</li>
+</ul>
+<h3 id="解压和压缩"><a href="#解压和压缩" class="headerlink" title="解压和压缩"></a>解压和压缩</h3><p><strong>解压</strong></p>
+<ul>
+<li><p>tar命令，归档文件，没有太多文件体积的减少，仅仅是简单的封装</p>
+</li>
+<li><p>语法：  <code>tar[-c -v -x -f -z -C]</code></p>
+<ul>
+<li>-c:  创建压缩文件，用于压缩模式</li>
+<li>-v:  显示压缩、解压过程，显示进度</li>
+<li>-x:  解压模式</li>
+<li>-f:  要创建的文件，或要解压的文件，-f选项必须在所有选项中属于最后一个</li>
+<li>-z:  <code>gzip</code>,模式，不使用-z就是普通的<code>tarball</code>格式</li>
+<li>-C:  选择解压的目的地，用于解压模式</li>
+</ul>
+</li>
+<li><p><strong>tar</strong>常用的组合：</p>
+<ul>
+<li><p><code>-cvf</code></p>
+</li>
+<li><p><code>-zcvf</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>压缩</strong></p>
+<ul>
+<li><p>zip命令压缩文件</p>
+</li>
+<li><p>语法:  <code>zip[-r] 参数1，参数2，参数3....参数N</code></p>
+<ul>
+<li>-r:压缩文件夹时使用</li>
+</ul>
+<p>解压：<code>unzip [-d] 压缩包</code></p>
+</li>
+</ul>
+<h3 id="实战环节"><a href="#实战环节" class="headerlink" title="实战环节"></a><strong>实战环节</strong></h3><h3 id="mysql5-7版本数据库管理系统安装系统"><a href="#mysql5-7版本数据库管理系统安装系统" class="headerlink" title="mysql5.7版本数据库管理系统安装系统"></a>mysql5.7版本数据库管理系统安装系统</h3><ul>
+<li><p>配置yum 仓库：</p>
+<ul>
+<li>更新密钥</li>
+</ul>
+<p><code>rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022</code></p>
+<ul>
+<li>安装<code>Mysql yum</code>库</li>
+</ul>
+<p><code>rpm -Uvh http://repo.mysql.com/mysql57-community-release-el7-7.noarch.rpm</code></p>
+</li>
+<li><p>安装MySQL</p>
+<ul>
+<li><p><code>yum -y install mysql-community-server</code></p>
+</li>
+<li><p>完成MySQL的初始化配置：配置密码以及允许远程登陆的权限</p>
+</li>
+<li><p><code>Pipixia-001</code>:mysql 密码，但是这个密码太复杂了</p>
+<ul>
+<li>如果想设置简单密码，需要降低Mysql的密码安全级别</li>
+</ul>
+<p>set global validate_password_policy&#x3D;LOW; # 密码安全级别低<br>set global validate_password_length&#x3D;4;   # 密码长度最低4位即可</p>
+<ul>
+<li>然后就可以用简单密码了（课程中使用简单密码，为了方便，生产中不要这样）</li>
+</ul>
+<p>ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘123456’；</p>
+<ul>
+<li>所以现在mySQL的密码为<code>123456</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>配置MySQL的远程控制</strong>(可选，但有风险)</p>
+<ul>
+<li><p>授权root远程登录</p>
+</li>
+<li><p><code>grant all privileges on *.* to root@&quot;IP地址&quot; identified by &#39;密码&#39; with grant option;</code>IP地址即允许登陆的IP地址，也可以填写%，表示允许任何地址</p>
+</li>
+<li><p>密码表示给远程登录独立设置密码，和本地登陆的密码可以不同</p>
+</li>
+<li><p>刷新权限，生效<code>flush privileges;</code></p>
+</li>
+</ul>
+<p><strong>退出MySQL的控制台界面：</strong></p>
+<ul>
+<li><code>exit</code>  或是<code>ctrl+d</code></li>
+</ul>
+<p><strong>检查端口</strong></p>
+<ul>
+<li><code>netstat -anp | grep 3306</code><ul>
+<li>3306:默认绑定3306端口</li>
+</ul>
+</li>
+</ul>
+<h3 id="Tomcat的安装和部署（配置在tomcat用户中）"><a href="#Tomcat的安装和部署（配置在tomcat用户中）" class="headerlink" title="Tomcat的安装和部署（配置在tomcat用户中）"></a>Tomcat的安装和部署（配置在tomcat用户中）</h3><ul>
+<li><p>实现了对Servlet和 JSP的支持，并提供作为Web服务器的特有功能</p>
+</li>
+<li><p>简单来讲，Tomcat是一个Web应用程序的托管平台，可以让用户编写的应用程序，被Tomcat所托管，提供网站服务（让用户开发的WEB应用程序，变成可被访问的网页）</p>
+</li>
+<li><p>安装：</p>
+<ul>
+<li>安装JDK环境<ul>
+<li>遇到的问题：Oracle中下载安装包时需要注册账户，但是尝试了很多次一直报错403</li>
+<li>解决方法：在华为镜像网站中进行下载</li>
+<li>总结：之前就出现过这种情况，外网的总拒绝访问，需通过国内的镜像网站进行下载</li>
+</ul>
+</li>
+<li>解压并部署Tomcat(不要用root命令)<ul>
+<li>遇到问题：解压Tomcat的包的时候，忘记输入解压到的目标文件，导致后边创建软连接是显示五次文件</li>
+<li>解决方法：使用history命令找到问题所在，用mv 命令将目标文件转移到需要的文件下</li>
+<li>总结：tar解压运用不够熟练，需要多加练习</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>方式：在浏览器上搜：<code>192.168.254.132：8080</code></p>
+</li>
+</ul>
+<h3 id="Nginx的安装部署-需要root权限"><a href="#Nginx的安装部署-需要root权限" class="headerlink" title="Nginx的安装部署(需要root权限)"></a>Nginx的安装部署(需要root权限)</h3><ul>
+<li><p>作用：Nginx（engine x）是一个高性能的HTTP和反向代理web服务器，同时也提供了<code>IMAP/POP3/SMTP</code>服务。和Tomcat一样，<code>Nginx</code>可以托管用户编写的WEB应用程序成为可访问的网页服务，同时也可以作为流量代理服务器，控制流量的中转。</p>
+</li>
+<li><p>方式：在浏览器中输入虚拟器端口：<code>192.168.254.132</code></p>
+</li>
+</ul>
+<h3 id="RabbitMQ的安装部署"><a href="#RabbitMQ的安装部署" class="headerlink" title="RabbitMQ的安装部署"></a>RabbitMQ的安装部署</h3><ul>
+<li><p>RabbitMQ一款知名的开源消息队列系统，为企业提供消息的发布、订阅、点对点传输等消息服务。</p>
+</li>
+<li><p>RabbitMQ的密码：<code>Pipixia-001</code></p>
+</li>
+<li><p>web网址：<a target="_blank" rel="noopener" href="http://192.168.254.130:15672/">http://192.168.254.130:15672</a></p>
+</li>
+</ul>
+<p><img src="C:\Users\18376\AppData\Roaming\Typora\typora-user-images\image-20260407213043730.png" alt="image-20260407213043730"></p>
+<h3 id="Redis安装部署"><a href="#Redis安装部署" class="headerlink" title="Redis安装部署"></a>Redis安装部署</h3><ul>
+<li>作用：redis是一个开源的、使用C语言编写的、支持网络交互的、可基于内存也可持久化的Key-Value数据库。redis的特点就是：快，可以基于内存存储数据并提供超低延迟、超快的检索速度<br>一般用于在系统中提供快速缓存的能力</li>
+</ul>
+<h3 id="ElasticSearch安装部署"><a href="#ElasticSearch安装部署" class="headerlink" title="ElasticSearch安装部署"></a>ElasticSearch安装部署</h3><ul>
+<li>作用：Elasticsearch（以下简称 es）是目前全文搜索引擎的首选。它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它。Elasticsearch 简称 es，在企业内同样是一款应用非常广泛的搜索引擎服务。很多服务中的搜索功能，都是基于 es 来实现的</li>
+<li>yum install -y elasticsear</li>
+<li>web网址：<a target="_blank" rel="noopener" href="http://192.168.254.130:9200/">http://192.168.254.130:9200</a></li>
+</ul>
+<h3 id="集群化环境的前置"><a href="#集群化环境的前置" class="headerlink" title="集群化环境的前置"></a>集群化环境的前置</h3><ul>
+<li><p>准备主机名映射</p>
+</li>
+<li><p>用node1用户登录node2用户：<code>ssh root@node2</code></p>
+</li>
+<li><p>配置ssh免密登录</p>
+<ul>
+<li>执行：<code>ssh-keygen -t rsa -b 4096</code>：共用一个公钥</li>
+<li>各自分享登录密码</li>
+<li>直接输入<code>ssh+主机名</code></li>
+</ul>
+</li>
+<li><p>配置JDK环境：三台都分别配置</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" data-id="cuiddQIG1CKoNnyb1pVCtAgoq" data-title="Linux学习笔记（1）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/04/12/MySQL%E5%AD%A6%E4%B9%A0%E7%AB%A0%E8%8A%82/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MySQL学习章节
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/12/MySQL%E5%AD%A6%E4%B9%A0%E7%AB%A0%E8%8A%82/">MySQL学习章节</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/">Linux学习笔记（1）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/29/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

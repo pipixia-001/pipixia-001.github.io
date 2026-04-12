@@ -93,11 +93,131 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h3 id="MySQL学习章节"><a href="#MySQL学习章节" class="headerlink" title="MySQL学习章节"></a><em><strong>MySQL学习章节</strong></em></h3><p><strong>MySQL数据库</strong></p>
+<ul>
+<li><p>启动与停止</p>
+<ul>
+<li>启动：<code>net start mysql80</code></li>
+<li>停止：<code>net start mysql80</code></li>
+</ul>
+</li>
+<li><p><strong>客户端连接</strong></p>
+</li>
+</ul>
+<p> 方式一：mysql提供的客户端命令行工具</p>
+<p>方式二：Windows系统提供的命令行：<code>mysql -u root -p</code></p>
+<p><strong>数据模型</strong></p>
+<ul>
+<li>关系型数据库：通过表结构存储数据</li>
+</ul>
+<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><p><strong>sql的通用语法</strong></p>
+<ul>
+<li>sql语句可以单行或是多行书写，以分号结尾</li>
+<li>sql语句可以使用空格缩进来增强语句的可读性</li>
+<li>MySQL数据库的 sql 语句不区分大小写，关键字建议使用大写</li>
+<li>注释：<ul>
+<li>单行注释：–或是#注释内容</li>
+<li>对行注释：&#x2F;* 注释内容*&#x2F;</li>
+</ul>
+</li>
+</ul>
+<p><strong>sql语句的分类</strong></p>
+<ul>
+<li>DDL：数据定义语言，用来定义数据库对象（数据库，表，字段）</li>
+<li>DML：数据操作语言，用于对数据库表中的数据进行增删改</li>
+<li>DQL：数据查询语言，用于查询数据库中表的记录</li>
+<li>DCL：数据控制语言，用来创建数据库用户控制数据库的访问权限</li>
+</ul>
+<h3 id="DDL语句"><a href="#DDL语句" class="headerlink" title="DDL语句"></a><strong>DDL语句</strong></h3><ul>
+<li><p>数据库操作</p>
+<ul>
+<li>查询所有数据库：<code>SHOW DATABASES;</code></li>
+<li>查询当前数据库：<code>SELECT DATEBASE();</code></li>
+<li>创建：<code>CREATE [IF NOT EXISTS]数据库名[DEFAULT CHARSET字符集] [COLLATE 排序规则]</code></li>
+<li>删除：<code>drop database[if exists]数据库名</code></li>
+<li>使用：<code>use 数据库名</code></li>
+</ul>
+</li>
+<li><p>数据库操作——表结构查询</p>
+<ul>
+<li><p>查询当前数据库所有表：<code>show tables</code></p>
+</li>
+<li><p>查询表结构：<code>desc 表名</code></p>
+</li>
+<li><p>查询指定表的建表语句：<code>show create table表名</code></p>
+</li>
+</ul>
+</li>
+<li><p>数据库操作——表结构的创建</p>
+<ul>
+<li><pre><code>create table 表名（
+    字段一 字段一类型[comment 字段一注释],
+    字段二 字段二类型[comment 字段二注释],
+    ......
+    字段n 字段n类型[comment 字段n注释]
+)[comment 表注释];
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>数据库操作——数据类型</p>
+<ul>
+<li>varchar</li>
+</ul>
+</li>
+<li><p>数据库操作——修改</p>
+<ul>
+<li>添加字段：<code>alter table 表名add 字段名 类型（长度）[comment 注释][约束]；</code></li>
+<li>修改字段名和字段类型：<code>alter table 表名 change 旧字段名 新字段名 类型（长度）[comment 注释][约束]；</code></li>
+<li>删除字段：<code>alter table 表名 drop 字段名</code></li>
+<li>修改表名：<code>alter table 表名 rename to新表名</code></li>
+</ul>
+</li>
+<li><p>数据库操作——删除</p>
+<ul>
+<li>删除表：<code>drop table 表名</code></li>
+<li>删除指定表，并重新创建表（一张全新的表）：<code>truncate table 表名</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Mysql-的图形化界面"><a href="#Mysql-的图形化界面" class="headerlink" title="Mysql 的图形化界面"></a>Mysql 的图形化界面</h3><ul>
+<li>学习使用datagrip</li>
+</ul>
+<h3 id="DML语句"><a href="#DML语句" class="headerlink" title="DML语句"></a>DML语句</h3><p>对数据库中的表进行增删改操作</p>
+<ul>
+<li><p>添加数据（insert）</p>
+</li>
+<li><p>修改数据（update)</p>
+</li>
+<li><p>删除数据（delete)</p>
+</li>
+<li><p>DML——添加数据</p>
+<ul>
+<li><p>给指定字段添加数据：<code>insert into 表名（字段名1，字段名2，...）values(值1，值2...);</code></p>
+</li>
+<li><p>给全部字段添加数据：<code>insert into 表名 values（值1，值2，...);</code></p>
+</li>
+<li><p>批量添加数据:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名（字段名1，字段名2，...) values(值1，值2，...),(值1，值2，...);</span><br><span class="line"></span><br><span class="line">`insert into 表名values(值1，值2，...),(值1，值2，...);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>DML——修改数据</p>
+<ul>
+<li><code>update 表名 set 字段名=值1，字段名=值2，...[where条件];</code></li>
+</ul>
+</li>
+<li><p>DML——删除数据</p>
+<ul>
+<li><code>delete from 表名[where 条件]</code>delete不能删除某一个字段的值（可以使用update)</li>
+<li>where条件可以有，也可以没有，如果没有条件，会删除整张表的所有数据</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/12/MySQL%E5%AD%A6%E4%B9%A0%E7%AB%A0%E8%8A%82/" data-id="cuidDXW9EIjPNvFdD6XRdwQA2" data-title="MySQL学习章节" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/12/MySQL%E5%AD%A6%E4%B9%A0%E7%AB%A0%E8%8A%82/" data-id="cuidY4Zy0jQvIMGa_SsvVllRN" data-title="MySQL学习章节" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -754,7 +874,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" data-id="cuidZYgoY_FBnG0AS7drVf98z" data-title="Linux学习笔记（1）" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" data-id="cuidHgFHZTFIo2Pz5DUz6CILv" data-title="Linux学习笔记（1）" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -805,7 +925,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/03/29/hello-world/" data-id="cuidzOJJMY1Drf8r5NQfGQkaP" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/03/29/hello-world/" data-id="cuidzkfJ4PYJO8U7y3D1a56Yn" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       

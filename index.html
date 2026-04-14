@@ -1,1223 +1,170 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Hexo",
+  "alternateName": [
+    "example.com"
+  ],
+  "url": "http://example.com/"
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.5-b1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 8.1.1"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/04/12/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" title="MySQL数据库笔记">MySQL数据库笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-04-12T06:43:30.000Z" title="Created 2026-04-12 14:43:30">2026-04-12</time></span></div><div class="content"># MySQL学习章节 MySQL数据库   启动与停止  启动：net start mysql80 停止：net start mysql80    客户端连接   方式一：mysql提供的客户端命令行工具 方式二：Windows系统提供的命令行：mysql -u root -p 数据模型  关系型数据库：通过表结构存储数据  # SQL sql的通用语法  sql语句可以单行或是多行书写，以分号结尾 sql语句可以使用空格缩进来增强语句的可读性 MySQL数据库的 sql 语句不区分大小写，关键字建议使用大写 注释：  单行注释：--或是#注释内容 对行注释：/* 注释内容*/    sql语句的分类  DDL：数据定义语言，用来定义数据库对象（数据库，表，字段） DML：数据操作语言，用于对数据库表中的数据进行增删改 DQL：数据查询语言，用于查询数据库中表的记录 DCL：数据控制语言，用来创建数据库用户控制数据库的访问权限  # DDL语句   数据库操作  查询所有数据库：SHOW DATABASES; 查询当前数据库：SELECT DATEBASE(); 创建：CREA...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" title="Linux学习笔记（1）">Linux学习笔记（1）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-04-08T12:43:04.000Z" title="Created 2026-04-08 20:43:04">2026-04-08</time></span></div><div class="content"># 计算机主要由硬件和软件组成   虚拟机就是一个虚拟的电脑；模拟出了一个虚拟的硬件   安装Centos:遇到的困难：阿里云的链接无法使用   解决方法：通过清华大学镜像网站下载完成   远程连接Linux:   一、掌握图形化与命令行   图形化：通过资源管理器   通过cmd命令行   使用Linux 基本使用命令行，效率高并且稳定   工具的使用   window实现交互不方便，因此借助第三方平台进行操作   第三方软件：FinallShell   学习如何通过Finalshell远程连接Linux   遇到问题：输入获取物理主机IP地址时，在终端输入ifconfig时ens33后并没有IP地址   解决方案：询问豆包   问题根源：没有启动VMware NAT Service 以及VMware DHCP Service ，导致虚拟机没有被分配IP   注意：Linux系统重启之后IP地址可能会变化，如果变化，就重新手动匹配IP  配置好之后就可以通过FinalShell远程连接linux  # 虚拟机快照：（在损坏操作系统的情况）   作用：通过快照将当前虚拟机的状态保...</div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">John Doe</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/12/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" title="MySQL数据库笔记">MySQL数据库笔记</a><time datetime="2026-04-12T06:43:30.000Z" title="Created 2026-04-12 14:43:30">2026-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" title="Linux学习笔记（1）">Linux学习笔记（1）</a><time datetime="2026-04-08T12:43:04.000Z" title="Created 2026-04-08 20:43:04">2026-04-08</time></div></div></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
   
-    <article id="post-MySQL数据库笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/12/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2026-04-12T06:43:30.000Z" itemprop="datePublished">2026-04-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/12/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">MySQL数据库笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+    <ul class="card-archive-list">
       
-        <h3 id="MySQL学习章节"><a href="#MySQL学习章节" class="headerlink" title="MySQL学习章节"></a><em><strong>MySQL学习章节</strong></em></h3><p><strong>MySQL数据库</strong></p>
-<ul>
-<li><p>启动与停止</p>
-<ul>
-<li>启动：<code>net start mysql80</code></li>
-<li>停止：<code>net start mysql80</code></li>
-</ul>
-</li>
-<li><p><strong>客户端连接</strong></p>
-</li>
-</ul>
-<p> 方式一：mysql提供的客户端命令行工具</p>
-<p>方式二：Windows系统提供的命令行：<code>mysql -u root -p</code></p>
-<p><strong>数据模型</strong></p>
-<ul>
-<li>关系型数据库：通过表结构存储数据</li>
-</ul>
-<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><p><strong>sql的通用语法</strong></p>
-<ul>
-<li>sql语句可以单行或是多行书写，以分号结尾</li>
-<li>sql语句可以使用空格缩进来增强语句的可读性</li>
-<li>MySQL数据库的 sql 语句不区分大小写，关键字建议使用大写</li>
-<li>注释：<ul>
-<li>单行注释：–或是#注释内容</li>
-<li>对行注释：&#x2F;* 注释内容*&#x2F;</li>
-</ul>
-</li>
-</ul>
-<p><strong>sql语句的分类</strong></p>
-<ul>
-<li>DDL：数据定义语言，用来定义数据库对象（数据库，表，字段）</li>
-<li>DML：数据操作语言，用于对数据库表中的数据进行增删改</li>
-<li>DQL：数据查询语言，用于查询数据库中表的记录</li>
-<li>DCL：数据控制语言，用来创建数据库用户控制数据库的访问权限</li>
-</ul>
-<h3 id="DDL语句"><a href="#DDL语句" class="headerlink" title="DDL语句"></a><strong>DDL语句</strong></h3><ul>
-<li><p>数据库操作</p>
-<ul>
-<li>查询所有数据库：<code>SHOW DATABASES;</code></li>
-<li>查询当前数据库：<code>SELECT DATEBASE();</code></li>
-<li>创建：<code>CREATE [IF NOT EXISTS]数据库名[DEFAULT CHARSET字符集] [COLLATE 排序规则]</code></li>
-<li>删除：<code>drop database[if exists]数据库名</code></li>
-<li>使用：<code>use 数据库名</code></li>
-</ul>
-</li>
-<li><p>数据库操作——表结构查询</p>
-<ul>
-<li><p>查询当前数据库所有表：<code>show tables</code></p>
-</li>
-<li><p>查询表结构：<code>desc 表名</code></p>
-</li>
-<li><p>查询指定表的建表语句：<code>show create table表名</code></p>
-</li>
-</ul>
-</li>
-<li><p>数据库操作——表结构的创建</p>
-<ul>
-<li><pre><code>create table 表名（
-    字段一 字段一类型[comment 字段一注释],
-    字段二 字段二类型[comment 字段二注释],
-    ......
-    字段n 字段n类型[comment 字段n注释]
-)[comment 表注释];
-</code></pre>
-</li>
-</ul>
-</li>
-<li><p>数据库操作——数据类型</p>
-<ul>
-<li>varchar</li>
-</ul>
-</li>
-<li><p>数据库操作——修改</p>
-<ul>
-<li>添加字段：<code>alter table 表名add 字段名 类型（长度）[comment 注释][约束]；</code></li>
-<li>修改字段名和字段类型：<code>alter table 表名 change 旧字段名 新字段名 类型（长度）[comment 注释][约束]；</code></li>
-<li>删除字段：<code>alter table 表名 drop 字段名</code></li>
-<li>修改表名：<code>alter table 表名 rename to新表名</code></li>
-</ul>
-</li>
-<li><p>数据库操作——删除</p>
-<ul>
-<li>删除表：<code>drop table 表名</code></li>
-<li>删除指定表，并重新创建表（一张全新的表）：<code>truncate table 表名</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="Mysql-的图形化界面"><a href="#Mysql-的图形化界面" class="headerlink" title="Mysql 的图形化界面"></a>Mysql 的图形化界面</h3><ul>
-<li>学习使用datagrip</li>
-</ul>
-<h3 id="DML语句"><a href="#DML语句" class="headerlink" title="DML语句"></a>DML语句</h3><p>对数据库中的表进行增删改操作</p>
-<ul>
-<li><p>添加数据（insert）</p>
-</li>
-<li><p>修改数据（update)</p>
-</li>
-<li><p>删除数据（delete)</p>
-</li>
-<li><p>DML——添加数据</p>
-<ul>
-<li><p>给指定字段添加数据：<code>insert into 表名（字段名1，字段名2，...）values(值1，值2...);</code></p>
-</li>
-<li><p>给全部字段添加数据：<code>insert into 表名 values（值1，值2，...);</code></p>
-</li>
-<li><p>批量添加数据:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名（字段名1，字段名2，...) values(值1，值2，...),(值1，值2，...);</span><br><span class="line"></span><br><span class="line">`insert into 表名values(值1，值2，...),(值1，值2，...);</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>DML——修改数据</p>
-<ul>
-<li><code>update 表名 set 字段名=值1，字段名=值2，...[where条件];</code></li>
-</ul>
-</li>
-<li><p>DML——删除数据</p>
-<ul>
-<li><code>delete from 表名[where 条件]</code>delete不能删除某一个字段的值（可以使用update)</li>
-<li>where条件可以有，也可以没有，如果没有条件，会删除整张表的所有数据</li>
-</ul>
-</li>
-</ul>
-<h3 id="DQL语句"><a href="#DQL语句" class="headerlink" title="DQL语句"></a>DQL语句</h3><ul>
-<li>dql 语法：<ul>
-<li>select ： 字段列表</li>
-<li>from  :表明列表</li>
-<li>where : 条件列表</li>
-<li>group by :分组字段列表</li>
-<li>having :分组后条件列表</li>
-<li>order by :排序字段列表</li>
-<li>limit ：分页参数</li>
-</ul>
-</li>
-</ul>
-<p><strong>dql基本查询：</strong></p>
-<ul>
-<li><p>查询多个字段：</p>
-<ul>
-<li><code>select 字段1，字段2...from 表名;</code></li>
-<li><code>select * from 表名;</code></li>
-</ul>
-</li>
-<li><p>设置别名：</p>
-<ul>
-<li>select 字段1[as 别名1]，字段2[别名2]… from 表名；（起别名的原表名称未变，只是查询视图里变化了而已）</li>
-</ul>
-</li>
-<li><p>去除重复记录：<code>select distinct 字段列表 from 表名;</code></p>
-</li>
-</ul>
-<p><strong>dql条件查询</strong>（where)</p>
-<ul>
-<li>语法：<code>select 字段列表from 表名 where 条件列表；</code></li>
-<li>条件： <ul>
-<li>&lt;&#x3D;,&gt;&#x3D; </li>
-<li>between and</li>
-<li>or </li>
-<li>like (模糊匹配)</li>
-</ul>
-</li>
-</ul>
-<p><strong>dql聚合查询</strong>(count max min avg sum)</p>
-<ul>
-<li>语法：<code>select 聚合函数（字段列表）from 表名；</code></li>
-</ul>
-<p><strong>dql分组查询</strong></p>
-<ul>
-<li>语法：<code>select 字段列表 from 表名 [where 条件]group by 分组字段名[having 分组后过滤条件]；</code></li>
-<li>where与having区别：执行时机不同：where是分组之前进行过滤，不满足where条件，不参与分组；而having是分组之后对结果进行过滤。判断条件不同：where不能对聚合函数进行判断，而having可以。</li>
-</ul>
-<p><strong>dql排序查询</strong></p>
-<ul>
-<li><p>语法：<code>select 字段列表 from 表名 order by 字段1 排序方式1，字段2 排序方式2；</code></p>
-</li>
-<li><p>排序方式：asc:升序（默认值）   desc:降序</p>
-</li>
-</ul>
-<p><strong>dql分页查询</strong></p>
-<ul>
-<li>语法：<code>select 字段列表 from 表名 limit 起始索引 查询记录数；</code></li>
-<li>起始索引从0开始，起始索引 &#x3D;（查询页码 - 1）* 每页显示记录数。</li>
-<li>分页查询是数据库的方言，不同的数据库有不同的实现，MySQL中是LIMIT。</li>
-<li>如果查询的是第一页数据，起始索引可以省略，直接简写为limit 10</li>
-</ul>
-<p><strong>dql执行顺序</strong></p>
-<ul>
-<li>from——》where——》group by——》having——》select——》order by ——》limit</li>
-</ul>
-<h3 id="DCL语句"><a href="#DCL语句" class="headerlink" title="DCL语句"></a>DCL语句</h3><p><strong>dcl——管理用户</strong></p>
-<ul>
-<li><p>查询用户：</p>
-<p><code>use mysql</code></p>
-<p><code>select * from user;</code></p>
-</li>
-<li><p>创建用户：<code>create user &#39;用户名&#39;@’主机名‘ identified by &#39;密码&#39;；</code></p>
-</li>
-<li><p>修改用户密码：<code>alter user &#39;用户名&#39;@’主机名‘ identified with mysql_native_password by &#39;新密码；</code></p>
-</li>
-<li><p>删除用户：<code>drop user &#39;用户名&#39;@&#39;主机名&#39;</code>；</p>
-</li>
-</ul>
-<p><strong>dcl——权限控制</strong></p>
-<ul>
-<li><p>常用的权限：</p>
-<ul>
-<li>所有权限：all或all privileges</li>
-<li>查询数据：select </li>
-<li>插入数据：insert</li>
-<li>修改数据：update</li>
-<li>删除数据：delete</li>
-<li>修改表: alter</li>
-<li>删除数据库&#x2F;表&#x2F;视图：drop</li>
-<li>创建数据库&#x2F;表:create</li>
-</ul>
-</li>
-<li><p>查询权限：<code>show grants for&#39;用户名&#39;@&#39;主机名&#39;；</code></p>
-</li>
-<li><p>授予权限：<code>grant 权限列表on 数据库名.表名 to &#39;用户名&#39;@&#39;主机名&#39;；</code></p>
-</li>
-<li><p>撤销权限：<code>revoke 权限列表 on 数据库名.表名 from &#39;用户名&#39;@&#39;主机名&#39;；</code></p>
-</li>
-</ul>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><strong>字符串函数</strong></p>
-<ul>
-<li>concat(s1,s2,s3…sn):字符串拼接</li>
-<li>lower（str):将字符串str全部转为小写</li>
-<li>upper（str)：将字符串全部转为大写</li>
-<li>lpad(str,n,pad):左填充，用字符串pad对str的左边进行填充，达到n个字符串长度</li>
-<li>rpad(str,n,pad):右填充，用字符串pad对str的右边进行填充，达到n个字符串长度</li>
-<li>trim(str):去掉字符串头部和尾部的空格</li>
-<li>substring(str,start len):返回字符串str从start位置起的len个长度的字符串</li>
-</ul>
-<p><strong>数值函数</strong></p>
-<ul>
-<li>ceil(x):向上取整</li>
-<li>floor(x):向下取整</li>
-<li>mod(x,y):返回x&#x2F;y的余数</li>
-<li>rand():返回0~1内的随机数</li>
-<li>round(x,y):求参数x的四舍五入的值，保留y位小数</li>
-</ul>
-<p>**日期函数 **</p>
-<ul>
-<li>curdate():当前日期</li>
-<li>curtime():当前时间</li>
-<li>now():当前日期和时间</li>
-<li>year(date):获取指定date的年份</li>
-<li>month(date):获取指定date的月份</li>
-<li>day(date):获取指定date的日期</li>
-<li>date_add(date,interval expr type):返回一个日期&#x2F;时间加上一个时间间隔expr 后的时间值</li>
-<li>datediff(date1,date2):返回起始时间date1和结束时间date2之间的天数</li>
-</ul>
-<p><strong>流程控制函数</strong></p>
-<ul>
-<li>IF(value, t, f) 如果 value 为 true ，返回 t ，否则返回 f</li>
-<li>IFNULL(value1, value2) 如果 value1 不为空，返回 value1 ，否则返回 value2</li>
-<li>CASE WHEN [val1] THEN [res1] … ELSE [default] END  如果 val1 为 true ，返回 res1 ……否则返回 default 默认值</li>
-<li>CASE [expr] WHEN [val1] THEN [res1] … ELSE [default] END  如果 expr 的值等于 val1 ，返回 res1 ……否则返回 default 默认值</li>
-</ul>
-<h3 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h3><p><strong>多表关系</strong></p>
-<ul>
-<li>一对多：在多的一方建立外键，指向少的一方的主键</li>
-<li>多对多：建立第三张中间表，中间表至少包含两个外键，分别关联两方主键</li>
-<li>一对一：多用于单表拆分，将一张表的基础字段放在另一张表中，其他详情字段放在另一张表中，以提升操作效率，在任意一方加入外键，关联另一方的主键，并且设置外键为唯一的(UNIQUE)</li>
-</ul>
-<p><strong>多表查询的概述</strong></p>
-<p>笛卡尔积：指的是集合A和集合B集合的所有组合情况（在多表查询中，需要消除无效的笛卡尔积）</p>
-<p>消除笛卡尔积的方法：加入where限制</p>
-<p><strong>多表查询的分类</strong></p>
-<ul>
-<li><p>链接</p>
-</li>
-<li><p>连接查询：</p>
-<ul>
-<li><p>自连接：当前表与自身的连接查询，自连接必须使用表别名</p>
-</li>
-<li><p>内连接：相当于查询AB交集部分数据</p>
-</li>
-<li><p>外连接：：</p>
-<ul>
-<li>左外连接：查询左表所有数据，以及两张表交集部分数据</li>
-<li>右外连接：查询右表所有数据，以及两张表交集部分数据</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>子查询</p>
-</li>
-</ul>
-<p><strong>连接查询</strong></p>
-<ul>
-<li>内连接：查询两张表的交集部分<ul>
-<li>隐式内连接：<code>select 字段列表 from 表1，表2where 条件...;</code></li>
-<li>显式内连接：<code>select 字段列表 from 表1 [inner] join 表2 on 连接条件...;</code></li>
-</ul>
-</li>
-</ul>
-<p><strong>外连接</strong></p>
-<ul>
-<li>左外连接：<code>select 字段列表 from 表1 left [outer] join 表2 on 条件...;</code></li>
-<li>右外连接：<code>select 字段列表 from 表1 right [outer] join 表2 on 条件...;</code></li>
-</ul>
-<p><strong>自连接</strong></p>
-<ul>
-<li>语法：<code>select 字段列表 from 表A 别名A join 表A 别名B on 条件...;</code></li>
-</ul>
-<p><strong>联合查询</strong></p>
-<ul>
-<li><p>定义：就是把多次查询的结果合并起来，形成一个新的查询结果集</p>
-</li>
-<li><p>语法：&#96;&#96;&#96;</p>
-</li>
-<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select 字段列表 from 表A...</span><br><span class="line"></span><br><span class="line">union[all]</span><br><span class="line"></span><br><span class="line">select 字段列表 from 表B ...;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对于union查询来说，多张表的列数必须保持一致，字段类型也需要保持一致</p>
-</li>
-<li><p>union会对联合后的表进行去重，但union all 不会</p>
-</li>
-</ul>
-<p><strong>子查询</strong></p>
-<ul>
-<li><p>定义：sql语句中嵌套select语句，称为嵌套语句，又称为子查询</p>
-</li>
-<li><p>语法：<code>select * from t1 where column1 =(select column1 from t2);</code></p>
-</li>
-<li><p>分类：</p>
-<ul>
-<li>标量子查询（子查询结果为单个值</li>
-<li>列子查询(子查询结果为一列)</li>
-<li>行子查询(子查询结果为一行)</li>
-<li>表子查询(子查询结果为多行多列)</li>
-</ul>
-</li>
-<li><p>标量子查询</p>
-<ul>
-<li>符号：&#x3D;   &lt;&gt;   &gt;   &gt;&#x3D;   &lt;   &lt;&#x3D;</li>
-</ul>
-</li>
-<li><p>列子查询</p>
-<ul>
-<li><p>in   not in   any   some   all</p>
-</li>
-<li><p>any:任意一个满足就行</p>
-</li>
-<li><p>some:与any等同</p>
-</li>
-<li><p>all:子查询返回列表的所有值都必须满足</p>
-</li>
-</ul>
-</li>
-<li><p>行子查询</p>
-<ul>
-<li>操作符：&#x3D;   &lt;&gt;   in   not in    in</li>
-</ul>
-</li>
-<li><p>表子查询</p>
-</li>
-</ul>
-<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p><strong>事物的四大特性</strong></p>
-<ul>
-<li>原子性：要么全部执行成功要么全部执行失败</li>
-<li>一致性：事务完成时，必须使所有的数据都保持一致的状态</li>
-<li>隔离性：数据库系统提供的隔离机制，保证事务在不受外部并发操作影响的独立环境下运行</li>
-<li>持久性:事务一旦提交或是回滚，他对数据库中的数据的改变时永久的</li>
-</ul>
-<p><strong>并发事务问题</strong></p>
-<ul>
-<li>脏读：一个事务读到另外一个事务还没有提交的数据</li>
-<li>不可重复读：一个事务先后读取同一条记录，但两次读取的数据不同，称之为不可重复读</li>
-<li>幻读：一个事务按照条件查询数据时，没有对应的数据行，但是在插入数据时，又发现这行数据已经存在，好像出现了“幻影</li>
-</ul>
-
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/04/">
+            <span class="card-archive-list-date">
+              April 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/12/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/" data-id="cuidvBOA7G65FLoHiPF_SHPEk" data-title="MySQL数据库笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Linux学习笔记（1）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" class="article-date">
-  <time class="dt-published" datetime="2026-04-08T12:43:04.000Z" itemprop="datePublished">2026-04-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/">Linux学习笔记（1）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="计算机主要由硬件和软件组成"><a href="#计算机主要由硬件和软件组成" class="headerlink" title="计算机主要由硬件和软件组成"></a>计算机主要由硬件和软件组成</h3><ul>
-<li><p>虚拟机就是一个虚拟的电脑；模拟出了一个虚拟的硬件</p>
-</li>
-<li><p>安装Centos:遇到的困难：阿里云的链接无法使用</p>
-</li>
-<li><p>解决方法：通过清华大学镜像网站下载完成</p>
-</li>
-</ul>
-<p><strong>远程连接Linux:</strong></p>
-<ul>
-<li><p>一、掌握图形化与命令行</p>
-</li>
-<li><p>图形化：通过资源管理器</p>
-</li>
-<li><p>通过cmd命令行</p>
-</li>
-<li><p>使用Linux 基本使用命令行，效率高并且稳定</p>
-</li>
-</ul>
-<p><strong>工具的使用</strong></p>
-<ul>
-<li><p>window实现交互不方便，因此借助第三方平台进行操作</p>
-</li>
-<li><p>第三方软件：FinallShell</p>
-</li>
-<li><p>学习如何通过Finalshell远程连接Linux</p>
-</li>
-<li><p>遇到问题：输入获取物理主机IP地址时，在终端输入ifconfig时ens33后并没有IP地址</p>
-</li>
-<li><p>解决方案：询问豆包</p>
-</li>
-<li><p>问题根源：没有启动VMware NAT Service 以及VMware DHCP Service ，导致虚拟机没有被分配IP</p>
-</li>
-</ul>
-<p><em><strong>注意：Linux系统重启之后IP地址可能会变化，如果变化，就重新手动匹配IP</strong></em></p>
-<ul>
-<li>配置好之后就可以通过FinalShell远程连接linux</li>
-</ul>
-<h3 id="虚拟机快照：（在损坏操作系统的情况）"><a href="#虚拟机快照：（在损坏操作系统的情况）" class="headerlink" title="虚拟机快照：（在损坏操作系统的情况）"></a>虚拟机快照：（在损坏操作系统的情况）</h3><ul>
-<li><p>作用：通过快照将当前虚拟机的状态保存下来，吗，，，，，，以后可以通过快照恢复虚拟机到保存的状态</p>
-</li>
-<li><p>步骤:</p>
-</li>
-<li><p>首先，需要关机虚拟机，右键点击选择快照</p>
-</li>
-<li><p>然后，点击拍摄快照</p>
-</li>
-<li><p>当虚拟机出现问题之后，点击快照，点击“转到”按钮，</p>
-</li>
-</ul>
-<h3 id="Linux基础命令结构"><a href="#Linux基础命令结构" class="headerlink" title="Linux基础命令结构"></a>Linux基础命令结构</h3><p>Linux中的目录结构：</p>
-<p>路径描述：在Linux系统中“ &#x2F; ”,且只有一个顶级目录，即为根目录。</p>
-<p>但是在windows系统中“ \ “,有多个顶级目录，即为各个盘符</p>
-<h3 id="Linux操作系统"><a href="#Linux操作系统" class="headerlink" title="Linux操作系统"></a>Linux操作系统</h3><p>Linux命令行：<code>command [-option(可选，非必填)] [parameter（可选，非必填]</code></p>
-<p><code>eg</code>.   <code>ls -l /home/pipixia </code>  ls是命令本身，-l是选项，<code>/home/pipixia</code>是参数：以列表的形式显示&#x2F;home&#x2F;<code>pipixia</code>的内容</p>
-<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>作用：展示当前的工作目录（以平铺的形式）（一般默认是Home）</p>
-<p>ls命令的参数（-a , -l ,-h)</p>
-<ul>
-<li><p>-a: 表示all的意思，即列出全部的文件，包含以’ . ‘开头的隐藏文件</p>
-</li>
-<li><p>-l: 表示以列表的形式展现内容</p>
-</li>
-<li><p>-h：表示以容易阅读的形式用单位展示（K,B.L)</p>
-</li>
-</ul>
-<p>命令参数的组合使用：同时使用多个参数的效果<code>eg</code> . <code>ls -a -l</code>   <code>ls -al</code>   <code>ls -la</code>   <code>ls -lah</code></p>
-<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a><code>cd</code></h3><p>作用：更改当前所在的工作目录（默认home目录）</p>
-<ul>
-<li><code>cd ~</code>和<code>cd</code>默认都是回到 家目录下，但是管理员和普通用户的家目录不同</li>
-</ul>
-<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>作用：通过pwd命令来查看当前所在的工作目录  无需参数</p>
-<h3 id="相对路径、绝对路径、特殊路径"><a href="#相对路径、绝对路径、特殊路径" class="headerlink" title="相对路径、绝对路径、特殊路径"></a>相对路径、绝对路径、特殊路径</h3><ul>
-<li><p>1.相对路径：以当前路径为起点，路径无需以&#x2F;开头</p>
-</li>
-<li><p>2.绝对路径：以根目录为起点，路径描述以&#x2F;开头（不方便）</p>
-</li>
-<li><p>3.特殊路径：（1） “<code>cd.</code>“ :表示当前目录</p>
-</li>
-</ul>
-<p>​                       （2） “<code>cd ..</code>“:表示切换到上一级目录（”<code>cd ../..</code>“表示切换到上二级目录）</p>
-<p>​                        （3） ”<code>cd~</code>“：表示切换到HOME目录</p>
-<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>作用：创建新的目录：参数必填，（-p参数可选  例：<code>mkdir -p itcast/good/666</code>,可以通过-p参数将一整条参数都创建完成）</p>
-<p>注意:因为创建文件的权限比较大，所以用<code>mkdir</code>创建目录时需要在HOME目录下</p>
-<h3 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h3><ul>
-<li><p>touch: 创建文件，touch 命令无选项，参数必填，表示要创建的文件路径，相对、绝对、特殊路径符均可使用</p>
-</li>
-<li><p>cat: 查看文件的内容（必填参数）</p>
-</li>
-<li><p>more: 查看文件内容，但与cat的区别在于more支持翻页，如果文件内容过多，可以一页页地展示(必填参数)</p>
-</li>
-<li><p>cp: 可以用于复制文件和文件夹   语法：<code> cp</code> [-r] 参数1  参数2（-r，可选，用于复制文件夹时使用，表示递归，参数1表示被复制的文件和文件夹，参数2，表示要被复制去的地方）</p>
-</li>
-<li><p>mv: 移动文件和文件夹，并拥有改名的效果   语法： mv  参数1  参数2 </p>
-</li>
-<li><p>rm: 用于文件和文件夹的删除    语法：  rm  [-r -f] 参数1  参数2  …….参数N(-r 用于删除文件夹，-f表示force,强制删除，一般用户用不到-f)可以一次性删除多个目标。</p>
-</li>
-</ul>
-<h3 id="rm的通配符"><a href="#rm的通配符" class="headerlink" title="rm的通配符"></a>rm的通配符</h3><ul>
-<li><p>符号“*”表示通配符，即匹配任意内容，可以用来做模糊匹配</p>
-</li>
-<li><p>test*表示匹配任意以test开头的内容</p>
-</li>
-<li><p>*test表示匹配任意以test结尾的内容</p>
-</li>
-<li><p>*test *表示匹配任意包含test的内容</p>
-</li>
-<li><p>提权：<code>sudo su </code>和<code>su -root-</code></p>
-</li>
-<li><p>输入exit返回普通用户</p>
-</li>
-</ul>
-<h3 id="which-and-find"><a href="#which-and-find" class="headerlink" title="which  and find"></a>which  and find</h3><ul>
-<li><p>which命令: 语法：<code>which  文件的路径</code></p>
-</li>
-<li><p>find命令：（1）按文件名查找   语法：find 起始路径  -name “被查找的文件名”</p>
-</li>
-</ul>
-<p>​                       查找文件的通配符“*”</p>
-<p>​                          （2）按文件大小查找文件  语法： find  起始路径  -size +|-n[<code>KMG</code>]       +、—分别表示大于和小于n表示大小数字  ，KMG表示大小单位</p>
-<p>​                        例：  找大于<code>1GB</code>的文件：find &#x2F; -size +1<code>G</code></p>
-<h3 id="grep命令和wc命令和管道符"><a href="#grep命令和wc命令和管道符" class="headerlink" title="grep命令和wc命令和管道符"></a>grep命令和wc命令和管道符</h3><p><strong>grep命令</strong></p>
-<p>作用：通过grep命令，从文件中通过关键字过滤文件行  语法：  <code>grep  [-n] 关键字 文件路径</code>{<strong>-n</strong>,可选，表示在结果中显示匹配的行的行号}(<strong>关键字</strong>，必填，表示过滤的关键字，带有空格和其他特殊符号，建议使用““将关键字包围起来)（<strong>文件路径</strong>，可作为内容输入端口）</p>
-<p><strong>wc命令</strong></p>
-<ul>
-<li>作用：做数量统计，统计文件的行数，单词数目等</li>
-<li>语法： <code>wc [-c -m -l -w]文件路径</code></li>
-<li>-c: 统计byte数量</li>
-<li>-m: 统计字符数量</li>
-<li>-l: 统计行数</li>
-<li>-w：统计单词数量</li>
-</ul>
-<p><strong>管道符“|”</strong></p>
-<ul>
-<li><p>含义：将管道符组左边命令的结果作为右边命令的输入</p>
-</li>
-<li><p>可以用于和其他的命令连用</p>
-</li>
-<li><p>管道符的基础应用</p>
-</li>
-</ul>
-<h3 id="echo、-反引号-、tail命令、重定向符的使用"><a href="#echo、-反引号-、tail命令、重定向符的使用" class="headerlink" title="echo、 反引号&#96;、tail命令、重定向符的使用"></a>echo、 反引号&#96;、tail命令、重定向符的使用</h3><p><strong>echo</strong></p>
-<ul>
-<li>在命令行中输出指定内容</li>
-</ul>
-<p><strong>反引号“&#96;”</strong></p>
-<ul>
-<li>··包围的内容将会被作为命令去执行，而不是作为字符被输出</li>
-<li>例： <strong>etho <code>pwd</code></strong></li>
-</ul>
-<p><strong>重定向符</strong></p>
-<ul>
-<li>**”&gt;”**将左侧命令的结果，<strong>覆盖</strong>写入到符号右边的指定的文件中</li>
-<li>**“&gt;&gt;”**将左侧命令的结果，<strong>追加</strong>写入到符号右侧指定文件中</li>
-</ul>
-<p><strong>tail命令</strong></p>
-<ul>
-<li><p>作用：可以查看文件尾部内容（默认查看10行）</p>
-</li>
-<li><p>语法：<code>tail [-f  - num] Linux路径</code></p>
-</li>
-</ul>
-<h3 id="vi编辑器"><a href="#vi编辑器" class="headerlink" title="vi编辑器"></a>vi编辑器</h3><p><strong>语法</strong></p>
-<ul>
-<li><p><code>vi  文件路径</code></p>
-</li>
-<li><p><code>vim  文件路径</code></p>
-</li>
-</ul>
-<p><strong>vi&#x2F;vim命令模式的快捷键</strong></p>
-<ul>
-<li><p><strong>i</strong>: 在当前光标位置进入输入模式</p>
-</li>
-<li><p><strong>a</strong>: 在当前光标位置之后进入输入模式</p>
-</li>
-<li><p>。。。。。。</p>
-</li>
-</ul>
-<h3 id="Linux用户和权限"><a href="#Linux用户和权限" class="headerlink" title="Linux用户和权限"></a>Linux用户和权限</h3><ul>
-<li><p><strong>su 和exit命令</strong></p>
-</li>
-<li><p><strong>su语法</strong>： <code>su [-] [用户名]</code></p>
-</li>
-<li><p><strong>exit</strong>： 退出超级管理员</p>
-</li>
-</ul>
-<p><strong>用户、用户组</strong></p>
-<ul>
-<li><p><strong>用户组管理</strong>（需要用root权限才能创建）</p>
-</li>
-<li><p>创建用户组：<code>groupadd 用户组名</code></p>
-<ul>
-<li>删除用户组：<code>groupdel 用户组名</code></li>
-</ul>
-</li>
-<li><p><strong>用户管理</strong>：1.创建用户：<code>useradd [-g  -d]用户名</code></p>
-<ul>
-<li><p>-g: 指定用户的组，不指定-g,会创建同名组并自动加入，指定-g需要组已经存在</p>
-</li>
-<li><p>-d: 指定用户HOME目录，不指定，HOME目录默认在：  <code>/home/用户名</code></p>
-</li>
-<li><p>退出当前用户：logout</p>
-<p>2.删除用户：<code>userdel [-r] 用户名</code></p>
-</li>
-</ul>
-<p>​     <strong>-r</strong>: 删除用户的home目录，若不使用-r时，删除用户时，HOME目录保存</p>
-<p>  3.<strong><code>id</code>命令</strong>：查看用户所属组</p>
-<ol start="4">
-<li><p><strong><code>usermod -aG 用户组，用户名</code></strong>:将指定的用户加入到指定的用户组</p>
-</li>
-<li><p><strong>getent命令</strong>：</p>
-</li>
-</ol>
-<p>​    语法:<code>getent passwd</code>可以查看当前系统有哪些用户</p>
-<p>​    语法：<code>getent group</code>可以查看当前系统内有哪些用户组</p>
-</li>
-</ul>
-<h3 id="查看Linux中的权限"><a href="#查看Linux中的权限" class="headerlink" title="查看Linux中的权限"></a>查看Linux中的权限</h3><ul>
-<li><table>
-<thead>
-<tr>
-<th>所属用户权限</th>
-<th>所属用户组权限</th>
-<th>其他用户权限</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>r w x -</td>
-<td>r w x  -</td>
-<td>r w x  -</td>
-</tr>
-</tbody></table>
-</li>
-<li><p><strong>rwx的含义</strong></p>
-<ul>
-<li>r: 表示读的权限（4）</li>
-<li>w: 表示写的权限（2）</li>
-<li>x：表示执行的权限（1）</li>
-</ul>
-</li>
-</ul>
-<h3 id="使用chmod命令，修改文件，文件夹的权限信息"><a href="#使用chmod命令，修改文件，文件夹的权限信息" class="headerlink" title="使用chmod命令，修改文件，文件夹的权限信息"></a>使用<code>chmod</code>命令，修改文件，文件夹的权限信息</h3><ul>
-<li>语法：<code>chmod [-R] 权限 文件或文件夹</code>   <strong>-R</strong>: 对文件或文件夹内的全部内容做同样的操作</li>
-</ul>
-<h3 id="使用chown命令，修改文件，文件夹的所属用户和用户组-只能适用于root用户执行"><a href="#使用chown命令，修改文件，文件夹的所属用户和用户组-只能适用于root用户执行" class="headerlink" title="使用chown命令，修改文件，文件夹的所属用户和用户组  只能适用于root用户执行"></a>使用<code>chown</code>命令，修改文件，文件夹的所属用户和用户组  <em>只能适用于root用户执行</em></h3><ul>
-<li>语法： <code>chown [-R] [用户][:] [用户组] 文件或文件夹</code></li>
-</ul>
-<h3 id="Linux的实用操作"><a href="#Linux的实用操作" class="headerlink" title="Linux的实用操作"></a>Linux的实用操作</h3><p><strong>1. 强制停止的快捷键</strong></p>
-<ul>
-<li>语法：<code>ctrl+c</code>强制停止</li>
-</ul>
-<p><strong>2.强制退出登出的快捷键</strong></p>
-<ul>
-<li>语法：<code>ctrl+d</code>强制退出账户（与exit以及logout的作用相似）</li>
-</ul>
-<p><strong>3.历史搜索命令</strong></p>
-<ul>
-<li><p><code>history</code>    搜索过去的命令</p>
-</li>
-<li><p><code>!+[要搜的前缀开头]</code>   例：!p 就能搜到最近一次以p开头的命令</p>
-</li>
-<li><p><code>ctrl+r</code>    输入内容去匹配历史命令</p>
-</li>
-</ul>
-<p><strong>4.光标移动快捷键</strong></p>
-<ul>
-<li><code>ctrl+a</code>  ：跳到命令开头</li>
-<li><code>ctrl+e</code>  ：跳到命令结尾</li>
-<li><code>ctrl+键盘右键</code>   ：向右跳一个单词</li>
-<li><code>ctrl+键盘左键</code>   ： 向左跳一个单词</li>
-</ul>
-<p><strong>5.清屏快捷键</strong></p>
-<p><code>ctrl+l  或  clear</code></p>
-<h3 id="使用yum为CentOS安装软件"><a href="#使用yum为CentOS安装软件" class="headerlink" title="使用yum为CentOS安装软件"></a>使用yum为CentOS安装软件</h3><p><em><strong>使用命令行yum命令安装软件</strong></em></p>
-<ul>
-<li><p>语法：<code>yum [-y] [install] | [remove] | [search] 软件名</code></p>
-</li>
-<li><p>[-y],自动确认，无需手动确认安装或卸载</p>
-</li>
-<li><p>yum 命令需要root 权限，并且需要联网</p>
-</li>
-</ul>
-<h3 id="掌握使用systemctl命令控制软件的启动和关闭"><a href="#掌握使用systemctl命令控制软件的启动和关闭" class="headerlink" title="掌握使用systemctl命令控制软件的启动和关闭"></a>掌握使用systemctl命令控制软件的启动和关闭</h3><ul>
-<li>语法：  <code>systemctl start | stop | status | enable | disable 服务名</code></li>
-<li>systemctl 控制的软件，一般称为服务</li>
-<li>enable :开机自启动</li>
-<li>status:看状态</li>
-</ul>
-<h3 id="使用ln命令创建链接"><a href="#使用ln命令创建链接" class="headerlink" title="使用ln命令创建链接"></a>使用ln命令创建链接</h3><ul>
-<li>作用：  在系统中创建软链接，可以将文件，文件夹链接到其他位置（类似于快捷方式）</li>
-<li>语法：  <code>ln -s 参数1 参数2</code><ul>
-<li>-s:  创建如软链接</li>
-<li>参数1：被链接的文件和文件夹</li>
-<li>参数2：要链接去的目的地</li>
-</ul>
-</li>
-</ul>
-<h3 id="日期和时区"><a href="#日期和时区" class="headerlink" title="日期和时区"></a>日期和时区</h3><p><strong>1. date命令查看日期时间</strong></p>
-<ul>
-<li><p>语法：  <code>date</code>[-d] [+格式化字符串]</p>
-</li>
-<li><p>[-d]：按照给定的字符串显示日期，一般用于日期计算</p>
-</li>
-<li><p>格式字符串：</p>
-<ul>
-<li><p>[%Y]：年</p>
-</li>
-<li><p>[%y]：年份后两位数字（00..99）</p>
-</li>
-<li><p>[%m]：月份（01..12）</p>
-</li>
-<li><p>[%d]： 日期（01..30）</p>
-</li>
-<li><p>[%H]： 小时（00..23）</p>
-</li>
-<li><p>[%M]： 分钟（00..59）</p>
-</li>
-<li><p>[%S]： 秒（00.60）</p>
-</li>
-<li><p>[%s]： 自<code>1970-01-01 00:00:00 UTC</code> 到现在的秒数</p>
-<ul>
-<li>可以自定义时间展现的形式</li>
-<li>输入date本身，会出现当前时间</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>2.修改时区（需要使用root权限）</strong></p>
-<p><code>rm -f /etc/localtime</code></p>
-<p><code>ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></p>
-<p>将<code>ntpd</code>设为自启动模式，联网自动校准时间</p>
-<p>也可以<code>ntpdate -u ntp.aliyun.com</code>  阿里云校准时间</p>
-<h3 id="IP地址和主机名"><a href="#IP地址和主机名" class="headerlink" title="IP地址和主机名"></a><code>IP</code>地址和主机名</h3><ul>
-<li><p>查看IP：<code>ifconfig</code></p>
-</li>
-<li><p>查看主机名：<code>hostname</code></p>
-<ul>
-<li>修改主机名：（需要root权限）<code>hostnamectl set -hostname 主机名</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="虚拟机配置固定IP-已完成"><a href="#虚拟机配置固定IP-已完成" class="headerlink" title="虚拟机配置固定IP:已完成"></a>虚拟机配置固定<code>IP</code>:已完成</h3><h3 id="ping命令"><a href="#ping命令" class="headerlink" title="ping命令"></a>ping命令</h3><ul>
-<li>作用：通过ping命令，检查指定的网络服务器是否是可联通状态</li>
-<li>语法：<code>ping [-c num] ip 或主机名</code><ul>
-<li>[-c]：检查的次数，不使用-c选项，将无限次持续检查</li>
-</ul>
-</li>
-</ul>
-<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a><code>wget</code></h3><ul>
-<li><p>作用：<code>wget</code>是非交互式文件下载器，可以在命令行中下载网络文件</p>
-</li>
-<li><p>语法：<code>wget [-b] url</code></p>
-<ul>
-<li><p>-b: 可选，后台下载，会将日志写到当前工作目录的<code>wegt-log</code>文件中</p>
-</li>
-<li><p><code>url</code>:下载链接</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h3><ul>
-<li>作用：可以发送<code>http</code>网络请求，可用于：下载文件，获取信息</li>
-<li>语法：<code>curl [-0] url</code><ul>
-<li>-0,用于下载文件，当<code>url</code>是下载链接时，可以使用此选项保存文件</li>
-<li><code>url</code>:要发起请求的网络地址</li>
-</ul>
-</li>
-</ul>
-<p><strong>端口</strong></p>
-<h3 id="netstat命令"><a href="#netstat命令" class="headerlink" title="netstat命令"></a><code>netstat</code>命令</h3><ul>
-<li><p>查看指定端口的占用情况</p>
-</li>
-<li><p>语法：<code>netstat -anp|grep 端口号</code></p>
-</li>
-</ul>
-<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><ul>
-<li><p>定义：每一个程序在运行时，被操作系统注册为系统中的一个进程，并会为每一个进程都分配一个独有的的：进程ID</p>
-</li>
-<li><p>查看进程的语法：<code>ps [-e -f]</code></p>
-<ul>
-<li><p>-e: 显示全部的进程</p>
-</li>
-<li><p>-f: 以完全格式化的形式展现全部的信息固定用法：<code>ps -ef</code></p>
-<ul>
-<li>与管道符公用，过滤信息，快速查找</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>关闭进程</p>
-<ul>
-<li>强制关闭进程：<code>kill [-9] 进程ID</code><ul>
-<li>-9:表示强制关闭进程</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h3><ul>
-<li><p>语法：<code>top</code>  查看CPU使用情况</p>
-<ul>
-<li><p><code>top -i</code>:  只要查看启用的</p>
-</li>
-<li><p>h键：可以用来查看快捷键</p>
-</li>
-</ul>
-</li>
-<li><p>磁盘的信息监控</p>
-<ul>
-<li>使用df命令</li>
-<li>语法:<code>df[-h]</code>： 查看磁盘使用率<ul>
-<li>-h:以更加人性化的单位显示</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>磁盘的信息监控还可以用</p>
-<ul>
-<li><p>语法： <code>iostat [x][num1][num2]</code>： 查看磁盘速率</p>
-<ul>
-<li><p>-x: 显示更多信息</p>
-</li>
-<li><p>num1：数字，刷新间隔</p>
-</li>
-<li><p>num2:   数字，刷新几次</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="网络的状态监控"><a href="#网络的状态监控" class="headerlink" title="网络的状态监控"></a>网络的状态监控</h3><ul>
-<li><p>语法： <code>sar -n DEV num1 num2</code></p>
-<ul>
-<li><p>-n : 查看网络，DEV表示查看网络接口</p>
-</li>
-<li><p>num1：刷新间隔</p>
-</li>
-<li><p>num2:  查看次数</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><ul>
-<li><p>定义:指的是操作系统在运行的时候，记录的一些关键性信息，用以辅助系统的运行</p>
-</li>
-<li><p>语法：<code>env</code>:查看当前系统中记录的环境变量(键值对的形式)</p>
-</li>
-<li><p><strong><code>&amp;</code></strong>:取到环境变量，例:<code>echo $PWD</code>（$引出键名，取出环境变量）</p>
-</li>
-<li><p><code>export</code>:自行设置临时变量</p>
-</li>
-<li><p>永久生效：</p>
-<ul>
-<li>针对当前用户生效,   配置在当前用户的<code>~/bashrc</code>文件中</li>
-<li>针对所有用户生效，  配置在系统的<code>/etc/profie</code>文件中</li>
-<li>并通过语法：<code>source 配置文件</code>，进行立刻生效，或重新登陆Finalshell生效</li>
-</ul>
-</li>
-</ul>
-<h3 id="上传和下载"><a href="#上传和下载" class="headerlink" title="上传和下载"></a>上传和下载</h3><ul>
-<li><p>通过Finalshell拖拽</p>
-</li>
-<li><p>通过rz命令上传</p>
-</li>
-<li><p>通过sz命令下载</p>
-</li>
-</ul>
-<h3 id="解压和压缩"><a href="#解压和压缩" class="headerlink" title="解压和压缩"></a>解压和压缩</h3><p><strong>解压</strong></p>
-<ul>
-<li><p>tar命令，归档文件，没有太多文件体积的减少，仅仅是简单的封装</p>
-</li>
-<li><p>语法：  <code>tar[-c -v -x -f -z -C]</code></p>
-<ul>
-<li>-c:  创建压缩文件，用于压缩模式</li>
-<li>-v:  显示压缩、解压过程，显示进度</li>
-<li>-x:  解压模式</li>
-<li>-f:  要创建的文件，或要解压的文件，-f选项必须在所有选项中属于最后一个</li>
-<li>-z:  <code>gzip</code>,模式，不使用-z就是普通的<code>tarball</code>格式</li>
-<li>-C:  选择解压的目的地，用于解压模式</li>
-</ul>
-</li>
-<li><p><strong>tar</strong>常用的组合：</p>
-<ul>
-<li><p><code>-cvf</code></p>
-</li>
-<li><p><code>-zcvf</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>压缩</strong></p>
-<ul>
-<li><p>zip命令压缩文件</p>
-</li>
-<li><p>语法:  <code>zip[-r] 参数1，参数2，参数3....参数N</code></p>
-<ul>
-<li>-r:压缩文件夹时使用</li>
-</ul>
-<p>解压：<code>unzip [-d] 压缩包</code></p>
-</li>
-</ul>
-<h3 id="实战环节"><a href="#实战环节" class="headerlink" title="实战环节"></a><strong>实战环节</strong></h3><h3 id="mysql5-7版本数据库管理系统安装系统"><a href="#mysql5-7版本数据库管理系统安装系统" class="headerlink" title="mysql5.7版本数据库管理系统安装系统"></a>mysql5.7版本数据库管理系统安装系统</h3><ul>
-<li><p>配置yum 仓库：</p>
-<ul>
-<li>更新密钥</li>
-</ul>
-<p><code>rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022</code></p>
-<ul>
-<li>安装<code>Mysql yum</code>库</li>
-</ul>
-<p><code>rpm -Uvh http://repo.mysql.com/mysql57-community-release-el7-7.noarch.rpm</code></p>
-</li>
-<li><p>安装MySQL</p>
-<ul>
-<li><p><code>yum -y install mysql-community-server</code></p>
-</li>
-<li><p>完成MySQL的初始化配置：配置密码以及允许远程登陆的权限</p>
-</li>
-<li><p><code>Pipixia-001</code>:mysql 密码，但是这个密码太复杂了</p>
-<ul>
-<li>如果想设置简单密码，需要降低Mysql的密码安全级别</li>
-</ul>
-<p>set global validate_password_policy&#x3D;LOW; # 密码安全级别低<br>set global validate_password_length&#x3D;4;   # 密码长度最低4位即可</p>
-<ul>
-<li>然后就可以用简单密码了（课程中使用简单密码，为了方便，生产中不要这样）</li>
-</ul>
-<p>ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘123456’；</p>
-<ul>
-<li>所以现在mySQL的密码为<code>123456</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>配置MySQL的远程控制</strong>(可选，但有风险)</p>
-<ul>
-<li><p>授权root远程登录</p>
-</li>
-<li><p><code>grant all privileges on *.* to root@&quot;IP地址&quot; identified by &#39;密码&#39; with grant option;</code>IP地址即允许登陆的IP地址，也可以填写%，表示允许任何地址</p>
-</li>
-<li><p>密码表示给远程登录独立设置密码，和本地登陆的密码可以不同</p>
-</li>
-<li><p>刷新权限，生效<code>flush privileges;</code></p>
-</li>
-</ul>
-<p><strong>退出MySQL的控制台界面：</strong></p>
-<ul>
-<li><code>exit</code>  或是<code>ctrl+d</code></li>
-</ul>
-<p><strong>检查端口</strong></p>
-<ul>
-<li><code>netstat -anp | grep 3306</code><ul>
-<li>3306:默认绑定3306端口</li>
-</ul>
-</li>
-</ul>
-<h3 id="Tomcat的安装和部署（配置在tomcat用户中）"><a href="#Tomcat的安装和部署（配置在tomcat用户中）" class="headerlink" title="Tomcat的安装和部署（配置在tomcat用户中）"></a>Tomcat的安装和部署（配置在tomcat用户中）</h3><ul>
-<li><p>实现了对Servlet和 JSP的支持，并提供作为Web服务器的特有功能</p>
-</li>
-<li><p>简单来讲，Tomcat是一个Web应用程序的托管平台，可以让用户编写的应用程序，被Tomcat所托管，提供网站服务（让用户开发的WEB应用程序，变成可被访问的网页）</p>
-</li>
-<li><p>安装：</p>
-<ul>
-<li>安装JDK环境<ul>
-<li>遇到的问题：Oracle中下载安装包时需要注册账户，但是尝试了很多次一直报错403</li>
-<li>解决方法：在华为镜像网站中进行下载</li>
-<li>总结：之前就出现过这种情况，外网的总拒绝访问，需通过国内的镜像网站进行下载</li>
-</ul>
-</li>
-<li>解压并部署Tomcat(不要用root命令)<ul>
-<li>遇到问题：解压Tomcat的包的时候，忘记输入解压到的目标文件，导致后边创建软连接是显示五次文件</li>
-<li>解决方法：使用history命令找到问题所在，用mv 命令将目标文件转移到需要的文件下</li>
-<li>总结：tar解压运用不够熟练，需要多加练习</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>方式：在浏览器上搜：<code>192.168.254.132：8080</code></p>
-</li>
-</ul>
-<h3 id="Nginx的安装部署-需要root权限"><a href="#Nginx的安装部署-需要root权限" class="headerlink" title="Nginx的安装部署(需要root权限)"></a>Nginx的安装部署(需要root权限)</h3><ul>
-<li><p>作用：Nginx（engine x）是一个高性能的HTTP和反向代理web服务器，同时也提供了<code>IMAP/POP3/SMTP</code>服务。和Tomcat一样，<code>Nginx</code>可以托管用户编写的WEB应用程序成为可访问的网页服务，同时也可以作为流量代理服务器，控制流量的中转。</p>
-</li>
-<li><p>方式：在浏览器中输入虚拟器端口：<code>192.168.254.132</code></p>
-</li>
-</ul>
-<h3 id="RabbitMQ的安装部署"><a href="#RabbitMQ的安装部署" class="headerlink" title="RabbitMQ的安装部署"></a>RabbitMQ的安装部署</h3><ul>
-<li><p>RabbitMQ一款知名的开源消息队列系统，为企业提供消息的发布、订阅、点对点传输等消息服务。</p>
-</li>
-<li><p>RabbitMQ的密码：<code>Pipixia-001</code></p>
-</li>
-<li><p>web网址：<a target="_blank" rel="noopener" href="http://192.168.254.130:15672/">http://192.168.254.130:15672</a></p>
-</li>
-</ul>
-<p><img src="C:\Users\18376\AppData\Roaming\Typora\typora-user-images\image-20260407213043730.png" alt="image-20260407213043730"></p>
-<h3 id="Redis安装部署"><a href="#Redis安装部署" class="headerlink" title="Redis安装部署"></a>Redis安装部署</h3><ul>
-<li>作用：redis是一个开源的、使用C语言编写的、支持网络交互的、可基于内存也可持久化的Key-Value数据库。redis的特点就是：快，可以基于内存存储数据并提供超低延迟、超快的检索速度<br>一般用于在系统中提供快速缓存的能力</li>
-</ul>
-<h3 id="ElasticSearch安装部署"><a href="#ElasticSearch安装部署" class="headerlink" title="ElasticSearch安装部署"></a>ElasticSearch安装部署</h3><ul>
-<li>作用：Elasticsearch（以下简称 es）是目前全文搜索引擎的首选。它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它。Elasticsearch 简称 es，在企业内同样是一款应用非常广泛的搜索引擎服务。很多服务中的搜索功能，都是基于 es 来实现的</li>
-<li>yum install -y elasticsear</li>
-<li>web网址：<a target="_blank" rel="noopener" href="http://192.168.254.130:9200/">http://192.168.254.130:9200</a></li>
-</ul>
-<h3 id="集群化环境的前置"><a href="#集群化环境的前置" class="headerlink" title="集群化环境的前置"></a>集群化环境的前置</h3><ul>
-<li><p>准备主机名映射</p>
-</li>
-<li><p>用node1用户登录node2用户：<code>ssh root@node2</code></p>
-</li>
-<li><p>配置ssh免密登录</p>
-<ul>
-<li>执行：<code>ssh-keygen -t rsa -b 4096</code>：共用一个公钥</li>
-<li>各自分享登录密码</li>
-<li>直接输入<code>ssh+主机名</code></li>
-</ul>
-</li>
-<li><p>配置JDK环境：三台都分别配置</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" data-id="cuiduKcWHNt1499YrtpVjaSPU" data-title="Linux学习笔记（1）" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2026/04/12/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">MySQL数据库笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2026/04/08/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/">Linux学习笔记（1）</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-04-14T06:37:31.912Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By John Doe</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

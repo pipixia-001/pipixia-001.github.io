@@ -9,7 +9,37 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, John Doe</rights>
   <title>Hexo</title>
-  <updated>2026-04-12T11:41:14.869Z</updated>
+  <updated>2026-04-24T10:31:22.884Z</updated>
+  <entry>
+    <author>
+      <name>John Doe</name>
+    </author>
+    <id>http://example.com/2026/04/24/XSS%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="http://example.com/2026/04/24/XSS%E6%BC%8F%E6%B4%9E%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <published>2026-04-24T10:31:22.000Z</published>
+    <title>XSS漏洞学习笔记</title>
+    <updated>2026-04-24T10:31:22.884Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>John Doe</name>
+    </author>
+    <id>http://example.com/2026/04/24/python%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="http://example.com/2026/04/24/python%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <published>2026-04-24T10:25:34.000Z</published>
+    <title>python复习笔记</title>
+    <updated>2026-04-24T10:25:34.089Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>John Doe</name>
+    </author>
+    <id>http://example.com/2026/04/24/php%E7%AB%A0%E8%8A%82%E5%AD%A6%E4%B9%A0/</id>
+    <link href="http://example.com/2026/04/24/php%E7%AB%A0%E8%8A%82%E5%AD%A6%E4%B9%A0/"/>
+    <published>2026-04-24T10:16:00.000Z</published>
+    <title>php章节学习</title>
+    <updated>2026-04-24T10:16:00.880Z</updated>
+  </entry>
   <entry>
     <author>
       <name>John Doe</name>
@@ -26,7 +56,7 @@
 <ul>]]>
     </summary>
     <title>MySQL数据库笔记</title>
-    <updated>2026-04-12T11:41:14.869Z</updated>
+    <updated>2026-04-17T12:05:18.461Z</updated>
   </entry>
   <entry>
     <author>

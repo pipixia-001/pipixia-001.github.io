@@ -9,16 +9,16 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, John Doe</rights>
   <title>Hexo</title>
-  <updated>2026-04-24T10:52:05.671Z</updated>
+  <updated>2026-04-27T08:31:29.458Z</updated>
   <entry>
     <author>
       <name>John Doe</name>
     </author>
-    <id>http://example.com/2026/04/24/php%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <link href="http://example.com/2026/04/24/php%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <published>2026-04-24T10:52:05.000Z</published>
-    <title>php学习笔记</title>
-    <updated>2026-04-24T10:52:05.671Z</updated>
+    <id>http://example.com/2026/04/27/php%E7%AB%A0%E8%8A%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="http://example.com/2026/04/27/php%E7%AB%A0%E8%8A%82%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <published>2026-04-27T08:31:29.000Z</published>
+    <title>php章节学习笔记</title>
+    <updated>2026-04-27T08:31:29.458Z</updated>
   </entry>
   <entry>
     <author>

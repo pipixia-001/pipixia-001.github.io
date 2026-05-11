@@ -9,7 +9,17 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, John Doe</rights>
   <title>Hexo</title>
-  <updated>2026-05-11T10:54:52.961Z</updated>
+  <updated>2026-05-11T10:56:09.017Z</updated>
+  <entry>
+    <author>
+      <name>John Doe</name>
+    </author>
+    <id>http://example.com/2026/05/11/CSRF%E6%BC%8F%E6%B4%9E/</id>
+    <link href="http://example.com/2026/05/11/CSRF%E6%BC%8F%E6%B4%9E/"/>
+    <published>2026-05-11T10:56:09.000Z</published>
+    <title>CSRF漏洞</title>
+    <updated>2026-05-11T10:56:09.017Z</updated>
+  </entry>
   <entry>
     <author>
       <name>John Doe</name>

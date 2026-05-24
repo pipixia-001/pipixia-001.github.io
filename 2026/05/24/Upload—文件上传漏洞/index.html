@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Upload—文件上传漏洞 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="# TOP10——upload(文件上传漏洞) # 一、Pass-01-前端js绕过   1.1 方法一：使用bp抓包修改参数：构造的.php（一句话木马）后缀改为.png|.jpg   需要上传php文件，但是有限制不能上传php文件   需要注意的一点时如果想直接抓后缀为.php的包，bp会出现抓不到包的情况   .php（一句话木马）文件的内容为 &#x3C;?php @eval($_POS">
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Upload—文件上传漏洞 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="# TOP10——upload(文件上传漏洞) # 一、Pass-01-前端js绕过   1.1 方法一：使用bp抓包修改参数：构造的.php（一句话木马）后缀改为.png|.jpg   需要上传php文件，但是有限制不能上传php文件   需要注意的一点时如果想直接抓后缀为.php的包，bp会出现抓不到包的情况   .php（一句话木马）文件的内容为 &#x3C;!--code￼0--&gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Upload—文件上传漏洞">
 <meta property="og:url" content="http://example.com/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="# TOP10——upload(文件上传漏洞) # 一、Pass-01-前端js绕过   1.1 方法一：使用bp抓包修改参数：构造的.php（一句话木马）后缀改为.png|.jpg   需要上传php文件，但是有限制不能上传php文件   需要注意的一点时如果想直接抓后缀为.php的包，bp会出现抓不到包的情况   .php（一句话木马）文件的内容为 &#x3C;?php @eval($_POS">
+<meta property="og:description" content="# TOP10——upload(文件上传漏洞) # 一、Pass-01-前端js绕过   1.1 方法一：使用bp抓包修改参数：构造的.php（一句话木马）后缀改为.png|.jpg   需要上传php文件，但是有限制不能上传php文件   需要注意的一点时如果想直接抓后缀为.php的包，bp会出现抓不到包的情况   .php（一句话木马）文件的内容为 &#x3C;!--code￼0--&gt;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://picsum.photos/200/200">
 <meta property="article:published_time" content="2026-05-24T13:01:15.000Z">
-<meta property="article:modified_time" content="2026-05-24T13:02:25.417Z">
+<meta property="article:modified_time" content="2026-05-24T13:18:29.903Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Top-10-Upload-文件上传漏洞">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "http://example.com/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/",
   "image": "https://picsum.photos/200/200",
   "datePublished": "2026-05-24T13:01:15.000Z",
-  "dateModified": "2026-05-24T13:02:25.417Z",
+  "dateModified": "2026-05-24T13:18:29.903Z",
   "author": [
     {
       "@type": "Person",
@@ -216,7 +216,7 @@ body {
     btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
     btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
   }
-})()</script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">Upload—文件上传漏洞</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Upload—文件上传漏洞</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-05-24T13:01:15.000Z" title="Created 2026-05-24 21:01:15">2026-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-24T13:02:25.417Z" title="Updated 2026-05-24 21:02:25">2026-05-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="top10upload文件上传漏洞"><a class="anchor" href="#top10upload文件上传漏洞">#</a> TOP10——upload(文件上传漏洞)</h3>
+})()</script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a><a class="nav-page-title" href="/"><span class="site-name">Upload—文件上传漏洞</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Upload—文件上传漏洞</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-05-24T13:01:15.000Z" title="Created 2026-05-24 21:01:15">2026-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-05-24T13:18:29.903Z" title="Updated 2026-05-24 21:18:29">2026-05-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="top10upload文件上传漏洞"><a class="anchor" href="#top10upload文件上传漏洞">#</a> TOP10——upload(文件上传漏洞)</h3>
 <h3 id="一-pass-01-前端js绕过"><a class="anchor" href="#一-pass-01-前端js绕过">#</a> 一、Pass-01-前端js绕过</h3>
 <ul>
 <li>
@@ -230,14 +230,250 @@ body {
 </li>
 <li>
 <pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:#ffffff;--shiki-dark-bg:#121212;color:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-text"><span class="line"><span>.php（一句话木马）文件的内容为</span></span>
-<span class="line"><span>&#x3C;?php</span></span>
-<span class="line"><span>@eval($_POST('pass'));</span></span>
-<span class="line"><span>?></span></span>
 <span class="line"><span>&#x3C;!--code￼0--></span></span>
 <span class="line"><span></span></span></code></pre>
 </li>
 </ul>
 </li>
+</ul>
+<h3 id="pass-05-文件后缀userini绕过"><a class="anchor" href="#pass-05-文件后缀userini绕过">#</a> Pass-05-文件后缀.user.ini绕过</h3>
+<p><em><strong>工欲善其事，必先利其器</strong></em></p>
+<ul>
+<li>
+<p>5.1 方法一：先上传.user.ini文件，然后再上传图片马shell.jpg,ini，然后在BP的截取的数据包里直接删掉.ini以及将Content-Type修改为image/jpg（煲仔焖需要注意的一点是，本关对于文件后缀的限制极其严格，小虾试了那么多的后缀，只有以.ini结尾的文件才能被严格的校验允许通过）</p>
+</li>
+<li>
+<p>首先，在用我们的.user.ini之前，我们需要先了解它的底层逻辑以及绕过原理。</p>
+</li>
+<li>
+<ol>
+<li>首先，煲仔焖需要明晰的一点是，.user.ini是不同于.htaccess文件的，因为.htaccess文件只能由Apache解析，不能被Nginx绕过；但是.user.ini文件用两者都可以跑通。</li>
+<li>什么是.user.ini：本质是PHP自定义配置文件，生效范围是当前目录和子目录，和.htaccess文件有相似之处。</li>
+<li>上传完.user.ini后，就相当于建立了PHP新的解析规则，就是当PHP解析和.user.ini的同级目录以及子目录中的.php文件时，会先执行一遍shell.jpg(图片马)文件。</li>
+</ol>
+</li>
+<li>
+<p>详细题解：</p>
+<ul>
+<li>
+<ol>
+<li>先上传.user.ini，文件内容为：<code>auto_prepend_file=shell.jpg</code></li>
+<li>然后上传图片马shell.jpg.ini文件
+<ul>
+<li>
+<ol>
+<li>z制作图片马的方法以及需要避开的坑：</li>
+<li>方法一：cp法：这里有一个很大的坑：首先我们需要了解这条命令的运行背景，就是将两个文件都转换为计算机可以理解的二进制码，生成一个计算机理解过后的文件shell.jpg,但是问题就在于我们如何让计算机理解的彻底，所以此时就有了/a|/b,并且，此时引入了一个概念：空字节（0x00）,煲仔焖要明确的一点是PHP在解析图片的时候，一旦遇到空字节，就会理解为解析完成。/a的独特功能就是在解析图片文件时，会自动将图片文件中的空字节过滤掉，/b做的就远远不足/a好，因为/b比较懒，他不会过滤掉空字节，所以煲仔焖可以试想，如果用/b解析图片文件时，将会遇到一个问题就是在PHP在还没有解析完的时候就会遇到一个空字节，导致后边拼接的一句话木马没有被解析。
+<ul>
+<li><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260515223213582.png" alt="image-20260515223213582" /></li>
+</ul>
+</li>
+<li>所以在此建议煲仔焖如果要解析.jpg|.png等图片文件时尽量还是使用/a。/b可以用来解析.txt等文件。</li>
+<li>方法二：记事本拼接法：用记事本打开图片文件，在图片二进制后直接拼接上一句话木马，即为形成图片马。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>最后在蚁剑中输入对应readme.php的url地址，即为触发了图片马，就可控制对方主机。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>5.2 另外尝试了几种拓展思路的方法都不可以（如有不同，啃腚是因为版本原因）：</p>
+<ul>
+<li>
+<ol>
+<li>.htaccess文件+图片马</li>
+<li>空格加点</li>
+<li>双写绕过：.pphphp,虽然成功上传文件到upload的文件中，但是蚁剑连不上，也就是说虽然绕过，但是没有解析成功，原封不动的展现了出来。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pass-06-大小写文件后缀绕过"><a class="anchor" href="#pass-06-大小写文件后缀绕过">#</a> Pass-06-大小写文件后缀绕过</h3>
+<p>直接查看源代码：</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516141108542.png" alt="image-20260516141108542" /></p>
+<p>发现并没有大小写转换<code>$file_ext = strtolower($file_ext);</code></p>
+<ul>
+<li>上传php文件 bp抓包，将.php改为.php+空格，放行 蚁剑连接</li>
+</ul>
+<h3 id="pass-07-文件后缀空格绕过"><a class="anchor" href="#pass-07-文件后缀空格绕过">#</a> Pass-07-文件后缀空格绕过</h3>
+<p>观察源代码：</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516141604135.png" alt="image-20260516141604135" /></p>
+<p>发现并没有对文件后的空格进行删除：<code> $file_ext = trim($file_ext); //首尾去空</code></p>
+<p>所以小虾对.php文件抓包添加空格，然后连接蚁剑</p>
+<h3 id="pass-08-文件后缀加点绕过"><a class="anchor" href="#pass-08-文件后缀加点绕过">#</a> Pass-08-文件后缀加点绕过</h3>
+<p>直接上源代码:</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516144407296.png" alt="image-20260516144407296" /></p>
+<p>发现并没有对文件后缀的.进行删除校验</p>
+<p><code>$file_name = deldot($file_name);//删除文件名末尾的点</code></p>
+<p>bp抓包添加.</p>
+<p>用蚁剑链接</p>
+<h3 id="pass-09-特殊字符data绕过"><a class="anchor" href="#pass-09-特殊字符data绕过">#</a> Pass-09-特殊字符DATA绕过</h3>
+<p>观察源代码：</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516150149610.png" alt="image-20260516150149610" /></p>
+<p>并没有对特殊字符DATA进行绕过</p>
+<p><code>$file_ext = str_ireplace('::$DATA', '', $file_ext);//去除字符串::$DATA</code></p>
+<p>绕过原理：php在window的时候如果文件名+<code>::$DATA</code>会把<code>:: DATA</code>之后的数据当成文件流处理 不会检测后缀名之前的文件名他的目的就是 不检查后缀名。</p>
+<ul>
+<li>上传php文件 bp抓包，将.php后加上 ::<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mi>a</mi><mi>t</mi><mi>a</mi><mo separator="true">,</mo><mtext>放行访问图片连接，发现出现</mtext><mn>400</mn><mtext>只需将</mtext><mi>u</mi><mi>r</mi><mi>l</mi><mtext>中的</mtext><mo>:</mo><mo>:</mo></mrow><annotation encoding="application/x-tex">Data ,放行 访问图片连接，发现出现400 只需将url中的::</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord cjk_fallback">放行访问图片连接，发现出现</span><span class="mord">400</span><span class="mord cjk_fallback">只需将</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord cjk_fallback">中的</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">::</span></span></span></span>data删去再刷新即可 最后用蚁剑连接</li>
+</ul>
+<h3 id="pass-10-文件后缀空格加点绕过"><a class="anchor" href="#pass-10-文件后缀空格加点绕过">#</a> Pass-10-文件后缀空格加点绕过</h3>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516160222169.png" alt="image-20260516160222169" /></p>
+<p>观察后端代码可知，本关校验较强，所以傻瓜式尝试自己已经学到的漏洞绕过的方法</p>
+<ul>
+<li>10.1 尝试方法一：使用图片马，首先要上传.user.ini文件，但此关限制了.user.ini文件以及.htaccess文件，所以这两种路走不通</li>
+<li>10.2 尝试方法二：使用目录穿越：../shell.php，失败</li>
+<li>10.3 尝试方法三：MIME绕过，失败</li>
+<li>10.4 尝试方法四：空格+点绕过,成功</li>
+</ul>
+<h3 id="pass-11-双写后缀绕过"><a class="anchor" href="#pass-11-双写后缀绕过">#</a> Pass-11-双写后缀绕过</h3>
+<p>观察后端代码：</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516165627358.png" alt="image-20260516165627358" /></p>
+<p>会将不允许出现的后缀替换为空</p>
+<p>所以用双写后缀进行绕过<code>.pphphp</code></p>
+<p>绕过原理：从前往后遇到第一组php时替换为空，此时剩下的一个p和hp组成一个新的php完成绕过</p>
+<h3 id="pass-12-get-00-截断"><a class="anchor" href="#pass-12-get-00-截断">#</a> Pass-12-GET %00 截断</h3>
+<ul>
+<li>本关条件： php版本&lt;5.3</li>
+<li>magic_quotes_gpc=off</li>
+<li>原理：%00在c编程里可以当作终止读取字符串的标志
+<ul>
+<li>PHP 在处理 <code>save_path</code> 参数时，遇到 <code>%00</code> 就会认为字符串结束了，后面的 <code>.jpg</code> 会被直接丢弃</li>
+<li><code>upload-labs/Pass-12/index.php?save_path=../shell.php%00.jpg</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="pass-13-post-00-截断"><a class="anchor" href="#pass-13-post-00-截断">#</a> Pass-13-Post %00 截断</h3>
+<ul>
+<li>
+<p>本关和GET%00截断所需要的条件基本相似</p>
+</li>
+<li>
+<p>需要注意的是， POST 传参会进行转义，所以我们的 %00 需要在 burpsuite Hex 十六进制模式添加 00 进行修改</p>
+</li>
+<li>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516182451082.png" alt="image-20260516182451082" /></p>
+</li>
+<li>
+<p>然后进入hex模式后，找到输入的.php文件的内容</p>
+</li>
+<li>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516182603177.png" alt="image-20260516182603177" /></p>
+</li>
+<li>
+<p>然后在php的hex模式下，就是在70后面增加yige00的hex</p>
+</li>
+<li>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516182737117.png" alt="image-20260516182737117" /></p>
+</li>
+<li>
+<p>放行后，用蚁剑链接</p>
+</li>
+</ul>
+<h3 id="pass-14-十六进制字节标识绕过"><a class="anchor" href="#pass-14-十六进制字节标识绕过">#</a> Pass-14-十六进制字节标识绕过</h3>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516184618817.png" alt="image-20260516184618817" /></p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260516184928475.png" alt="image-20260516184928475" /></p>
+<p>通过审计源码可知：可以将文件的内容解析为十六进制，同时读取前两个字节</p>
+<ul>
+<li>可以先在记事本中编辑一句话木马内容，在前随意加两个字符（好去修改十六进制）</li>
+<li>再将一句话木马转十六进制后修改前两个字节标识，修改为89 50则为png文件（文件名后缀还是 php）</li>
+<li>将php文件进行上传，可以发现上传成功，upload文件夹中已经存在×××.png的文件了</li>
+</ul>
+<p>但是此时我们用蚁剑链接显示失败所以我们还需要用到文件包含漏洞</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260517113039122.png" alt="image-20260517113039122" /></p>
+<ul>
+<li>为了接下来的工作，我们需要简单了解一文件包含的作用：
+<ul>
+<li>上传限制堵死了图片马的正常路子，文件包含漏洞绕开了所有后缀校验、解析限制，给图片马单独开了一条绿色通道。</li>
+<li>换一句大白话来讲就是：图片马负责躺平上传，文件包含负责带路执行。</li>
+</ul>
+</li>
+</ul>
+<p>它是根据Get来接受file的，故我们只需要再url中输入?file=upload/×××.png，回车，最后复制文件的url地址，然后用蚁剑进链接</p>
+<h3 id="pass-15-图片马绕过"><a class="anchor" href="#pass-15-图片马绕过">#</a> Pass-15-图片马绕过</h3>
+<p>首先，图片马的制作方法小虾已经在第五关的时候详细讲过，所以在这里不做过多的阐述。</p>
+<p>本关需要了解一个新的知识点：getimagesize()函数</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260517113926811.png" alt="image-20260517113926811" /></p>
+<p>所以本关直接</p>
+<ul>
+<li>
+<ol>
+<li>制作图片马</li>
+<li>上传图片马</li>
+<li>进入文件包含，输入?file=upload/×××.文件后缀，检查是否成功</li>
+<li>蚁剑链接url</li>
+</ol>
+</li>
+</ul>
+<h3 id="pass-16-图片马绕过"><a class="anchor" href="#pass-16-图片马绕过">#</a> Pass-16-图片马绕过</h3>
+<p>题解与15关一模一样，不做过多解释</p>
+<h3 id="pass-17-二次渲染"><a class="anchor" href="#pass-17-二次渲染">#</a> Pass-17-二次渲染</h3>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260517115825874.png" alt="image-20260517115825874" /></p>
+<ul>
+<li>
+<p>详细题解：</p>
+<ul>
+<li>
+<ol>
+<li>imagecreatefromjpeg是PHP中的一个函数，用于创建一个新的图像资源对象，并从格式jpg的图像文件中读取数据.</li>
+<li>由于二次渲染后图片中的部分数据会被修改，即(A,B,C)可能会被修改为(A,D,E)，那么对于此限制，我们 可以找到不被修改的A ，因为它不被过滤，因此我们将A修改为注入语句，此时语句不会被过滤，从而达 到命令执行的目的。</li>
+<li>例如，我们上传一个111.jpg文件，从upload文件夹中取出一次渲染后的该文件，假设变为了 222.jpg，再用工具比对111.png和222.jpg的十六进制信息，将一句话木马代码复制粘贴进222.jpg的 与111.jpg相同部分（未经渲染）的内容中，再将修改过后的222.jpg文件再一次上传，二次渲染后的文 件其实和222.jpg一样（同一文件只会渲染一次）</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>知识的拓展：</p>
+<ul>
+<li>
+<ol>
+<li>
+<p>渲染 = 服务器把上传的图片 “读出来 → 解析 → 重新生成一张新图片” 的过程。</p>
+</li>
+<li>
+<p>小虾推荐使用gif图片文件</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260517131150645.png" alt="image-20260517131150645" /></p>
+</li>
+</ul>
+<p>对比后定位不变的蓝色安全区</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260517131455464.png" alt="image-20260517131455464" /></p>
+<p>将一句话木马写进去：（其实还是建议直接插在最后，这样就不用对比安全区在哪里）</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260517182216449.png" alt="image-20260517182216449" /></p>
+<p>最后来连接蚁剑</p>
+<h3 id="pass-18-条件竞争"><a class="anchor" href="#pass-18-条件竞争">#</a> Pass-18-条件竞争</h3>
+<ul>
+<li>
+<p>条件竞争的条件：将文件先上传到服务器，在去判断上传的文件合不合法</p>
+</li>
+<li>
+<p>条件竞争的原理：一些网站上传文件的逻辑是先允许上传任意文件，然后检测上传文件的文件包是否合法（校验文件后 缀、内容等），如果不合法则删除文件。这里存在的问题是文件上传成功后和删除文件之间存在一个短 的时间差（因为要执行检查文件和删除文件的操作），攻击者就可以利用这个时间差完成竞争条件的上 传漏洞攻击。</p>
+</li>
+</ul>
+<p>观察后端源码：</p>
+<p><img src="https://raw.githubusercontent.com/pipixia-001/my-blog-images/main/images/image-20260517183348108.png" alt="image-20260517183348108" /></p>
+<p>后端的处理逻辑：先不加过滤的保存任意上传的文件，然后对文件的合法性进行校验，若不合法则删除。</p>
+<ul>
+<li>
+<p>我们可以使用 Burp Suite 的多线程发包功能，同时在浏览器中不断访问我们的 Webshell 。这样，有可能在文件被删除的瞬间成功访问到我们的木马，实现条件竞争绕过。</p>
+</li>
+<li>
+<p>首先，我们编写webshell:<code>&lt;?php fputs(fopen('pass18.php','w'),'&lt;?php@eval($_POST['mima']);?&gt;');?&gt;</code></p>
+</li>
+<li>
+<p>然后，我们编写条件竞争脚本</p>
+</li>
+</ul>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests                                   //这是导入 requests 库，它是 Python 里专门用来发送 HTTP 请求的工具</span><br><span class="line">url = <span class="string">&quot;http://***/upload-labs/upload/yijuhua.php&quot;</span>//这里的 *** 是你的靶场 IP 或域名，yijuhua.php 就是你要上传的那个 PHP 文件。</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:                                      //这是一个死循环，意思是 “一直重复执行下面的代码，直到遇到 <span class="keyword">break</span>”</span><br><span class="line">	html = requests.get(url)                     //这行代码的作用是：用 GET 方法访问上面定义的 URL，并把服务器返回的响应存到变量 html 里。</span><br><span class="line">	<span class="keyword">if</span> html.status_code == <span class="number">200</span>:                  //这行代码的意思是：如果服务器返回 <span class="number">200</span>，就执行下面的代码</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;OK&quot;</span>)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<ul>
 <li>
 <p>在命令行里下载requests库，然后运行python <a target="_blank" rel="noopener" href="http://race.py">race.py</a></p>
 </li>
@@ -304,4 +540,4 @@ body {
 </ul>
 </li>
 </ul>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">http://example.com/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Top-10-Upload-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">Top-10-Upload-文件上传漏洞</a></div><div class="post-share"><div class="social-share" data-image="https://picsum.photos/200/200" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/05/11/CSRF%E6%BC%8F%E6%B4%9E/" title="CSRF漏洞"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">CSRF漏洞</div></div><div class="info-2"><div class="info-item-1"># CSRF跨站请求伪造漏洞 一、CSRF跨站请求伪造原理   1.1 csrf是什么：通过伪装用户的请求来利用网站，利用网站漏洞 从用户那里恶意盗取信息   1.2 在浏览器中，cookie在一段时间内是不会过期的（不关闭或退出浏览器），再次访问都会默认登陆，在cookie存在期间，通过构造csrf脚本或包含csrf脚本的链接发送给用户，得到信息后，再伪造用户身份，执行相关操作   1.3 完成一次csrf攻击的前提：  1.3.1 登录受信任网站A并在本地生成Cookie 1.3.2 再不登出A的情况下，访问危险网站B 总结：以上两个步骤均要满足时，才能够完成一次CSRF攻击    1.4 csrf漏洞最容易出现的地方  修改密码的地方、添加用户的地方、数据库备份的地方数据交易支付、以及其他一些对话框钓鱼页面 csrf一般与XSS结合使用，也称为XSRF攻击    1.5 步骤：  1.5.1  漏洞风险存在 1.5.2 伪装数据操作请求的恶意链接或者页面 1.5.3 诱使用户主动访问或登录恶意链接，触发非法操作    二、CSRF攻击的分类   2.1 GET类型  2.1...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://picsum.photos/200/200" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">John Doe</div><div class="author-info-description">谁怕？一蓑烟雨任平生</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pipixia-001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/pipixia-001" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">网安天下</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#top10upload%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E"><span class="toc-number">1.</span> <span class="toc-text"> TOP10——upload(文件上传漏洞)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-pass-01-%E5%89%8D%E7%AB%AFjs%E7%BB%95%E8%BF%87"><span class="toc-number">2.</span> <span class="toc-text"> 一、Pass-01-前端js绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-19-apache%E6%BC%8F%E6%B4%9E%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89"><span class="toc-number">3.</span> <span class="toc-text"> Pass-19-apache漏洞+条件竞争</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-20-%E7%AE%80%E5%8D%95%E5%90%8E%E7%BC%80%E7%BB%95%E8%BF%87"><span class="toc-number">4.</span> <span class="toc-text"> Pass-20-简单后缀绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-21-%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text"> Pass-21-代码审计</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" title="Upload—文件上传漏洞">Upload—文件上传漏洞</a><time datetime="2026-05-24T13:01:15.000Z" title="Created 2026-05-24 21:01:15">2026-05-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/11/CSRF%E6%BC%8F%E6%B4%9E/" title="CSRF漏洞">CSRF漏洞</a><time datetime="2026-05-11T10:56:09.000Z" title="Created 2026-05-11 18:56:09">2026-05-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/11/XXE%E6%BC%8F%E6%B4%9E/" title="XXE漏洞">XXE漏洞</a><time datetime="2026-05-11T10:54:08.000Z" title="Created 2026-05-11 18:54:08">2026-05-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/11/SSRF%E6%BC%8F%E6%B4%9E/" title="SSRF漏洞">SSRF漏洞</a><time datetime="2026-05-11T10:51:41.000Z" title="Created 2026-05-11 18:51:41">2026-05-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="java学习笔记">java学习笔记</a><time datetime="2026-05-11T10:48:56.000Z" title="Created 2026-05-11 18:48:56">2026-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By John Doe</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,122,255" opacity="0.7" zIndex="-1" count="120" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-show-text.min.js" data-mobile="true" data-text="网安天下" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">http://example.com/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Top-10-Upload-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">Top-10-Upload-文件上传漏洞</a></div><div class="post-share"><div class="social-share" data-image="https://picsum.photos/200/200" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/05/11/CSRF%E6%BC%8F%E6%B4%9E/" title="CSRF漏洞"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">CSRF漏洞</div></div><div class="info-2"><div class="info-item-1"># CSRF跨站请求伪造漏洞 一、CSRF跨站请求伪造原理   1.1 csrf是什么：通过伪装用户的请求来利用网站，利用网站漏洞 从用户那里恶意盗取信息   1.2 在浏览器中，cookie在一段时间内是不会过期的（不关闭或退出浏览器），再次访问都会默认登陆，在cookie存在期间，通过构造csrf脚本或包含csrf脚本的链接发送给用户，得到信息后，再伪造用户身份，执行相关操作   1.3 完成一次csrf攻击的前提：  1.3.1 登录受信任网站A并在本地生成Cookie 1.3.2 再不登出A的情况下，访问危险网站B 总结：以上两个步骤均要满足时，才能够完成一次CSRF攻击    1.4 csrf漏洞最容易出现的地方  修改密码的地方、添加用户的地方、数据库备份的地方数据交易支付、以及其他一些对话框钓鱼页面 csrf一般与XSS结合使用，也称为XSRF攻击    1.5 步骤：  1.5.1  漏洞风险存在 1.5.2 伪装数据操作请求的恶意链接或者页面 1.5.3 诱使用户主动访问或登录恶意链接，触发非法操作    二、CSRF攻击的分类   2.1 GET类型  2.1...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://picsum.photos/200/200" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">John Doe</div><div class="author-info-description">谁怕？一蓑烟雨任平生</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pipixia-001"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/pipixia-001" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">网安天下</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#top10upload%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E"><span class="toc-number">1.</span> <span class="toc-text"> TOP10——upload(文件上传漏洞)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-pass-01-%E5%89%8D%E7%AB%AFjs%E7%BB%95%E8%BF%87"><span class="toc-number">2.</span> <span class="toc-text"> 一、Pass-01-前端js绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-05-%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80userini%E7%BB%95%E8%BF%87"><span class="toc-number">3.</span> <span class="toc-text"> Pass-05-文件后缀.user.ini绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-06-%E5%A4%A7%E5%B0%8F%E5%86%99%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E7%BB%95%E8%BF%87"><span class="toc-number">4.</span> <span class="toc-text"> Pass-06-大小写文件后缀绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-07-%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E7%A9%BA%E6%A0%BC%E7%BB%95%E8%BF%87"><span class="toc-number">5.</span> <span class="toc-text"> Pass-07-文件后缀空格绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-08-%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E5%8A%A0%E7%82%B9%E7%BB%95%E8%BF%87"><span class="toc-number">6.</span> <span class="toc-text"> Pass-08-文件后缀加点绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-09-%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6data%E7%BB%95%E8%BF%87"><span class="toc-number">7.</span> <span class="toc-text"> Pass-09-特殊字符DATA绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-10-%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E7%A9%BA%E6%A0%BC%E5%8A%A0%E7%82%B9%E7%BB%95%E8%BF%87"><span class="toc-number">8.</span> <span class="toc-text"> Pass-10-文件后缀空格加点绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-11-%E5%8F%8C%E5%86%99%E5%90%8E%E7%BC%80%E7%BB%95%E8%BF%87"><span class="toc-number">9.</span> <span class="toc-text"> Pass-11-双写后缀绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-12-get-00-%E6%88%AA%E6%96%AD"><span class="toc-number">10.</span> <span class="toc-text"> Pass-12-GET %00 截断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-13-post-00-%E6%88%AA%E6%96%AD"><span class="toc-number">11.</span> <span class="toc-text"> Pass-13-Post %00 截断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-14-%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%AD%97%E8%8A%82%E6%A0%87%E8%AF%86%E7%BB%95%E8%BF%87"><span class="toc-number">12.</span> <span class="toc-text"> Pass-14-十六进制字节标识绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-15-%E5%9B%BE%E7%89%87%E9%A9%AC%E7%BB%95%E8%BF%87"><span class="toc-number">13.</span> <span class="toc-text"> Pass-15-图片马绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-16-%E5%9B%BE%E7%89%87%E9%A9%AC%E7%BB%95%E8%BF%87"><span class="toc-number">14.</span> <span class="toc-text"> Pass-16-图片马绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-17-%E4%BA%8C%E6%AC%A1%E6%B8%B2%E6%9F%93"><span class="toc-number">15.</span> <span class="toc-text"> Pass-17-二次渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-18-%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89"><span class="toc-number">16.</span> <span class="toc-text"> Pass-18-条件竞争</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-19-apache%E6%BC%8F%E6%B4%9E%E6%9D%A1%E4%BB%B6%E7%AB%9E%E4%BA%89"><span class="toc-number">17.</span> <span class="toc-text"> Pass-19-apache漏洞+条件竞争</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-20-%E7%AE%80%E5%8D%95%E5%90%8E%E7%BC%80%E7%BB%95%E8%BF%87"><span class="toc-number">18.</span> <span class="toc-text"> Pass-20-简单后缀绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pass-21-%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1"><span class="toc-number">19.</span> <span class="toc-text"> Pass-21-代码审计</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/24/Upload%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" title="Upload—文件上传漏洞">Upload—文件上传漏洞</a><time datetime="2026-05-24T13:01:15.000Z" title="Created 2026-05-24 21:01:15">2026-05-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/11/CSRF%E6%BC%8F%E6%B4%9E/" title="CSRF漏洞">CSRF漏洞</a><time datetime="2026-05-11T10:56:09.000Z" title="Created 2026-05-11 18:56:09">2026-05-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/11/XXE%E6%BC%8F%E6%B4%9E/" title="XXE漏洞">XXE漏洞</a><time datetime="2026-05-11T10:54:08.000Z" title="Created 2026-05-11 18:54:08">2026-05-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/11/SSRF%E6%BC%8F%E6%B4%9E/" title="SSRF漏洞">SSRF漏洞</a><time datetime="2026-05-11T10:51:41.000Z" title="Created 2026-05-11 18:51:41">2026-05-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/11/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="java学习笔记">java学习笔记</a><time datetime="2026-05-11T10:48:56.000Z" title="Created 2026-05-11 18:48:56">2026-05-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By John Doe</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.5-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.5-b1"></script><script src="/js/main.js?v=5.5.5-b1"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,122,255" opacity="0.7" zIndex="-1" count="120" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-show-text.min.js" data-mobile="true" data-text="网安天下" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

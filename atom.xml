@@ -9,16 +9,36 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, John Doe</rights>
   <title>Hexo</title>
-  <updated>2026-05-11T10:56:09.017Z</updated>
+  <updated>2026-05-24T12:55:43.591Z</updated>
   <entry>
     <author>
       <name>John Doe</name>
     </author>
+    <id>http://example.com/2026/05/24/Upload%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</id>
+    <link href="http://example.com/2026/05/24/Upload%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
+    <published>2026-05-24T12:55:43.000Z</published>
+    <title>Upload文件上传漏洞</title>
+    <updated>2026-05-24T12:55:43.591Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>John Doe</name>
+    </author>
+    <content>
+      <![CDATA[<h3 id="csrf跨站请求伪造漏洞"><a class="anchor" href="#csrf跨站请求伪造漏洞">#</a> CSRF跨站请求伪造漏洞</h3><p><strong>一、CSRF跨站请求伪造原理</strong></p><ul><li><p>1.1 csrf是什么：通过伪装用户的请求来利用网站，利用网站漏洞 从用户那里恶意盗取信息</p></li><li><p>1.2 在浏览器中，cookie在一段时间内是不会过期的（不关闭或退出浏览器），再次访问都会默认登陆，在cookie存在期间，通过构造csrf脚本或包含csrf脚本的链接发送给用户，得到信息后，再伪造用户身份，执行相关操作</p></li><li><p>1.3 完成一次csrf攻击的前提：</p><ul><li>1.3.1 登录受信任网站A并在本地生成Cookie</li><li>1.3.2 再不登出A的情况下，访问危险网站B</li><li>总结：以上两个步骤均要满足时，才能够完成一次CSRF攻击</li></ul></li><li><p>1.4 csrf漏洞最容易出现的地方</p><ul><li>修改密码的地方、添加用户的地方、数据库备份的地方数据交易支付、以及其他一些对话框钓鱼页面</li><li>csrf一般与XSS结合使用，也称为XSRF攻击</li></ul></li><li><p>1.5 步骤：</p><ul><li>1.5.1  漏洞风险存在</li><li>1.5.2 伪装数据操作请求的恶意链接或者页面</li><li>1.5.3 诱使用户主动访问或登录恶意链接，触发非法操作</li></ul></li></ul><p><strong>二、CSRF攻击的分类</strong></p><ul><li><p>2.1 GET类型</p><ul><li>2.1.1 向某个地方获取一些数据，这个获取的过程可以理解为一个简单的查询，专业名词称为幂等，即为随意多次执行，这种类型的请求可以被缓存，下次有请求直接从缓存读取，不用对浏览器再次发送请求</li><li>2.1.2 get请求一般是通过URL里面拼接上参数</li><li>2.1.3 get攻击的方式：<ul><li>方式一：使用标签<code>&lt;img src=&quot;&quot;&gt;;</code></li><li>方式二：bp抓包生成表单提交的数据包</li></ul></li></ul></li><li><p>2.2 POST类型</p><ul><li>2.2.1 希望服务器做某项写的操作，是不幂等的，因为是设计成有成本的操作，所以不能被缓存</li><li>2.2.2 post请求一般都是表单提交，可以在body里面携带数据</li><li>post攻击的方式：bp抓包生成表单提交的数据包</li></ul></li></ul><p><strong>三、CSRF漏洞的防御</strong></p><ul><li>3.1 尽量使用post,限制get:get接口太容易被拿来做csrf攻击。post并不是万无一失，攻击者只需要构造一个form表单就可以，但需要在第三方面做，这样就增加了暴露的可能性</li><li>3.2 加验证码，验证码只能作为一种辅助手段，不能作为主要解决方案</li><li>3.3 Refere Check(请求来源检查)——但是可以通过固定写死同样目标的referer绕过检验</li><li>3.4 Anti CSRF Token防护</li></ul><p><strong>四、拓展</strong></p><ul><li><p>4.1 CSRF蠕虫</p><ul><li>CSRF攻击的终极形式：自我复制，迅速传播</li><li>2008年百度蠕虫：<code>http://msg.baidu.com/？ct=22&amp;cm=MailSend&amp;tn=bmSubmit&amp;sn=用户账号&amp;co=消息内容</code></li><li>只需要指定sn参数为发送消息的用户，co参数为消息的内容，就可以成功发送短信消息</li></ul></li><li><p>4.2 如何成为蠕虫</p><ul><li>配合另外一个漏洞：json数据泄露问题</li></ul></li></ul>]]>
+    </content>
     <id>http://example.com/2026/05/11/CSRF%E6%BC%8F%E6%B4%9E/</id>
     <link href="http://example.com/2026/05/11/CSRF%E6%BC%8F%E6%B4%9E/"/>
     <published>2026-05-11T10:56:09.000Z</published>
+    <summary>
+      <![CDATA[<h3 id="csrf跨站请求伪造漏洞"><a class="anchor" href="#csrf跨站请求伪造漏洞">#</a> CSRF跨站请求伪造漏洞</h3>
+<p><strong>一、CSRF跨站请求伪造原理</strong></p>
+<ul>
+<li>
+<p>1.1]]>
+    </summary>
     <title>CSRF漏洞</title>
-    <updated>2026-05-11T10:56:09.017Z</updated>
+    <updated>2026-05-11T14:45:46.161Z</updated>
   </entry>
   <entry>
     <author>
